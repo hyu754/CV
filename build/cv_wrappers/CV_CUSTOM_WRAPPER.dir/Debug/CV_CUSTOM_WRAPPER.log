@@ -1,0 +1,4 @@
+﻿  optic_flow.cpp
+D:\GitHub\CV\cv_wrappers\source\optic_flow.cpp(53): warning C4101: 'i' : unreferenced local variable
+D:\GitHub\CV\cv_wrappers\source\optic_flow.cpp(53): warning C4101: 'k' : unreferenced local variable
+  CV_CUSTOM_WRAPPER.vcxproj -> D:\GitHub\CV\build\cv_wrappers\Debug\CV_CUSTOM_WRAPPER.lib

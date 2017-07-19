@@ -9,7 +9,7 @@ const int MAX_COUNT = 500;
 
 
 void optic_flow::initialize_points(std::vector<cv::Point2f> in_vector){
-
+	original_position = in_vector;
 	points[1] = in_vector;
 	points[0].clear();
 	initialized = true;
@@ -22,6 +22,8 @@ void optic_flow::add_points(cv::Point2f in_point){
 	cornerSubPix(gray, tmp, winSize, Size(-1, -1), termcrit);
 	points[1].push_back(tmp[0]);
 	std::swap(points[1], points[0]);
+
+	initialized = true;
 }
 
 void optic_flow::clear_points(void){
@@ -67,20 +69,12 @@ void optic_flow::run_LK(std::string name){
 			circle(image, points[1][i], 3, Scalar(0, 255, 0), -1, 8);
 		}
 		points[1].resize(k);*/
-		for (i = 0; i < points[1].size(); i++)
+	/*	for (i = 0; i < points[1].size(); i++)
 		{
+			if (status.at(i))
+				circle(image, points[1][i], 1, Scalar(0, 250, 1), 3, 8);
 			
-			circle(image, points[1][i], 1, Scalar(0, 250, 1), 3, 8);
-			history.push_back(points[1][i]);
-			if (history.size() != 0){
-				for (auto history_ptr = history.begin(); history_ptr != history.end(); ++history_ptr){
-
-				//	circle(image, *history_ptr, 1, Scalar(200, 250, 1), 3, 8);
-				}
-				
-
-			}
-		}
+		}*/
 
 
 	}
@@ -93,9 +87,21 @@ void optic_flow::run_LK(std::string name){
 		addRemovePt = false;
 	}
 
+	//draw line if still tracked
+	int _count_status_ = 0;
+	for (auto status_ptr = status.begin(); status_ptr != status.end(); ++status_ptr){
+		if ((*status_ptr)){
+			circle(image, points[1].at(_count_status_), 1, Scalar(0, 250, 1), 3, 8);
+			cv::line(image, original_position.at(_count_status_), points[1].at(_count_status_), cv::Scalar(0, 100, 200));
+			
+		} 
+
+		_count_status_++;
+		
+	}
 
 	imshow(name, image);
-
+	cv::waitKey(1);
 	/*char c = (char)waitKey(10);
 	if (c == 27)
 	break;
@@ -122,13 +128,13 @@ void optic_flow::run_LK(std::string name){
 optic_flow::optic_flow(){
 	std::cout << "Initialize optic flow using LK" << std::endl;
 
-	termcrit.maxCount = 20;
-	termcrit.epsilon = 0.001;
+	termcrit.maxCount = 10;
+	termcrit.epsilon = 0.01;
 
-	subPixWinSize.height = 15;
-	subPixWinSize.width = 15;
-	winSize.height = 15;
-	winSize.width = 15;
+	subPixWinSize.height = 10;
+	subPixWinSize.width = 10;
+	winSize.height = 10;
+	winSize.width = 10;
 }
 
 

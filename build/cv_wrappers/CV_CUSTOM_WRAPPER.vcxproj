@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{D49D1EE7-5126-336C-84A0-25FD2FC0F10A}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>CV_CUSTOM_WRAPPER</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GitHub\CV\build\cv_wrappers\Debug\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CV_CUSTOM_WRAPPER.dir\Debug\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CV_CUSTOM_WRAPPER</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GitHub\CV\build\cv_wrappers\Release\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CV_CUSTOM_WRAPPER.dir\Release\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CV_CUSTOM_WRAPPER</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GitHub\CV\build\cv_wrappers\MinSizeRel\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CV_CUSTOM_WRAPPER.dir\MinSizeRel\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CV_CUSTOM_WRAPPER</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GitHub\CV\build\cv_wrappers\RelWithDebInfo\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CV_CUSTOM_WRAPPER.dir\RelWithDebInfo\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CV_CUSTOM_WRAPPER</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\GitHub\opencv\build;D:\GitHub\opencv\include;D:\GitHub\opencv\include\opencv;D:\GitHub\opencv\modules\cudev\include;D:\GitHub\opencv\modules\core\include;D:\GitHub\opencv\modules\cudaarithm\include;D:\GitHub\opencv\modules\flann\include;D:\GitHub\opencv\modules\imgproc\include;D:\GitHub\opencv\modules\ml\include;D:\GitHub\opencv\modules\objdetect\include;D:\GitHub\opencv_contrib\modules\phase_unwrapping\include;D:\GitHub\opencv_contrib\modules\plot\include;D:\GitHub\opencv_contrib\modules\reg\include;D:\GitHub\opencv_contrib\modules\surface_matching\include;D:\GitHub\opencv\modules\video\include;D:\GitHub\opencv_contrib\modules\xphoto\include;D:\GitHub\opencv_contrib\modules\bgsegm\include;D:\GitHub\opencv\modules\cudabgsegm\include;D:\GitHub\opencv\modules\cudafilters\include;D:\GitHub\opencv\modules\cudaimgproc\include;D:\GitHub\opencv\modules\cudawarping\include;D:\GitHub\opencv\modules\dnn\include;D:\GitHub\opencv_contrib\modules\face\include;D:\GitHub\opencv_contrib\modules\fuzzy\include;D:\GitHub\opencv_contrib\modules\img_hash\include;D:\GitHub\opencv\modules\imgcodecs\include;D:\GitHub\opencv\modules\photo\include;D:\GitHub\opencv\modules\shape\include;D:\GitHub\opencv\modules\videoio\include;D:\GitHub\opencv_contrib\modules\xobjdetect\include;D:\GitHub\opencv\modules\cudacodec\include;D:\GitHub\opencv\modules\highgui\include;D:\GitHub\opencv\modules\ts\include;D:\GitHub\opencv_contrib\modules\bioinspired\include;D:\GitHub\opencv_contrib\modules\dpm\include;D:\GitHub\opencv\modules\features2d\include;D:\GitHub\opencv_contrib\modules\line_descriptor\include;D:\GitHub\opencv_contrib\modules\saliency\include;D:\GitHub\opencv_contrib\modules\text\include;D:\GitHub\opencv\modules\calib3d\include;D:\GitHub\opencv_contrib\modules\ccalib\include;D:\GitHub\opencv\modules\cudafeatures2d\include;D:\GitHub\opencv\modules\cudalegacy\include;D:\GitHub\opencv\modules\cudaobjdetect\include;D:\GitHub\opencv\modules\cudaoptflow\include;D:\GitHub\opencv\modules\cudastereo\include;D:\GitHub\opencv_contrib\modules\datasets\include;D:\GitHub\opencv_contrib\modules\rgbd\include;D:\GitHub\opencv_contrib\modules\stereo\include;D:\GitHub\opencv_contrib\modules\structured_light\include;D:\GitHub\opencv\modules\superres\include;D:\GitHub\opencv_contrib\modules\tracking\include;D:\GitHub\opencv\modules\videostab\include;D:\GitHub\opencv_contrib\modules\xfeatures2d\include;D:\GitHub\opencv_contrib\modules\ximgproc\include;D:\GitHub\opencv_contrib\modules\aruco\include;D:\GitHub\opencv_contrib\modules\optflow\include;D:\GitHub\opencv\modules\stitching\include;D:\GitHub\CV\include;D:\GitHub\CV\cv_wrappers\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\GitHub\opencv\build;D:\GitHub\opencv\include;D:\GitHub\opencv\include\opencv;D:\GitHub\opencv\modules\cudev\include;D:\GitHub\opencv\modules\core\include;D:\GitHub\opencv\modules\cudaarithm\include;D:\GitHub\opencv\modules\flann\include;D:\GitHub\opencv\modules\imgproc\include;D:\GitHub\opencv\modules\ml\include;D:\GitHub\opencv\modules\objdetect\include;D:\GitHub\opencv_contrib\modules\phase_unwrapping\include;D:\GitHub\opencv_contrib\modules\plot\include;D:\GitHub\opencv_contrib\modules\reg\include;D:\GitHub\opencv_contrib\modules\surface_matching\include;D:\GitHub\opencv\modules\video\include;D:\GitHub\opencv_contrib\modules\xphoto\include;D:\GitHub\opencv_contrib\modules\bgsegm\include;D:\GitHub\opencv\modules\cudabgsegm\include;D:\GitHub\opencv\modules\cudafilters\include;D:\GitHub\opencv\modules\cudaimgproc\include;D:\GitHub\opencv\modules\cudawarping\include;D:\GitHub\opencv\modules\dnn\include;D:\GitHub\opencv_contrib\modules\face\include;D:\GitHub\opencv_contrib\modules\fuzzy\include;D:\GitHub\opencv_contrib\modules\img_hash\include;D:\GitHub\opencv\modules\imgcodecs\include;D:\GitHub\opencv\modules\photo\include;D:\GitHub\opencv\modules\shape\include;D:\GitHub\opencv\modules\videoio\include;D:\GitHub\opencv_contrib\modules\xobjdetect\include;D:\GitHub\opencv\modules\cudacodec\include;D:\GitHub\opencv\modules\highgui\include;D:\GitHub\opencv\modules\ts\include;D:\GitHub\opencv_contrib\modules\bioinspired\include;D:\GitHub\opencv_contrib\modules\dpm\include;D:\GitHub\opencv\modules\features2d\include;D:\GitHub\opencv_contrib\modules\line_descriptor\include;D:\GitHub\opencv_contrib\modules\saliency\include;D:\GitHub\opencv_contrib\modules\text\include;D:\GitHub\opencv\modules\calib3d\include;D:\GitHub\opencv_contrib\modules\ccalib\include;D:\GitHub\opencv\modules\cudafeatures2d\include;D:\GitHub\opencv\modules\cudalegacy\include;D:\GitHub\opencv\modules\cudaobjdetect\include;D:\GitHub\opencv\modules\cudaoptflow\include;D:\GitHub\opencv\modules\cudastereo\include;D:\GitHub\opencv_contrib\modules\datasets\include;D:\GitHub\opencv_contrib\modules\rgbd\include;D:\GitHub\opencv_contrib\modules\stereo\include;D:\GitHub\opencv_contrib\modules\structured_light\include;D:\GitHub\opencv\modules\superres\include;D:\GitHub\opencv_contrib\modules\tracking\include;D:\GitHub\opencv\modules\videostab\include;D:\GitHub\opencv_contrib\modules\xfeatures2d\include;D:\GitHub\opencv_contrib\modules\ximgproc\include;D:\GitHub\opencv_contrib\modules\aruco\include;D:\GitHub\opencv_contrib\modules\optflow\include;D:\GitHub\opencv\modules\stitching\include;D:\GitHub\CV\include;D:\GitHub\CV\cv_wrappers\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\GitHub\opencv\build;D:\GitHub\opencv\include;D:\GitHub\opencv\include\opencv;D:\GitHub\opencv\modules\cudev\include;D:\GitHub\opencv\modules\core\include;D:\GitHub\opencv\modules\cudaarithm\include;D:\GitHub\opencv\modules\flann\include;D:\GitHub\opencv\modules\imgproc\include;D:\GitHub\opencv\modules\ml\include;D:\GitHub\opencv\modules\objdetect\include;D:\GitHub\opencv_contrib\modules\phase_unwrapping\include;D:\GitHub\opencv_contrib\modules\plot\include;D:\GitHub\opencv_contrib\modules\reg\include;D:\GitHub\opencv_contrib\modules\surface_matching\include;D:\GitHub\opencv\modules\video\include;D:\GitHub\opencv_contrib\modules\xphoto\include;D:\GitHub\opencv_contrib\modules\bgsegm\include;D:\GitHub\opencv\modules\cudabgsegm\include;D:\GitHub\opencv\modules\cudafilters\include;D:\GitHub\opencv\modules\cudaimgproc\include;D:\GitHub\opencv\modules\cudawarping\include;D:\GitHub\opencv\modules\dnn\include;D:\GitHub\opencv_contrib\modules\face\include;D:\GitHub\opencv_contrib\modules\fuzzy\include;D:\GitHub\opencv_contrib\modules\img_hash\include;D:\GitHub\opencv\modules\imgcodecs\include;D:\GitHub\opencv\modules\photo\include;D:\GitHub\opencv\modules\shape\include;D:\GitHub\opencv\modules\videoio\include;D:\GitHub\opencv_contrib\modules\xobjdetect\include;D:\GitHub\opencv\modules\cudacodec\include;D:\GitHub\opencv\modules\highgui\include;D:\GitHub\opencv\modules\ts\include;D:\GitHub\opencv_contrib\modules\bioinspired\include;D:\GitHub\opencv_contrib\modules\dpm\include;D:\GitHub\opencv\modules\features2d\include;D:\GitHub\opencv_contrib\modules\line_descriptor\include;D:\GitHub\opencv_contrib\modules\saliency\include;D:\GitHub\opencv_contrib\modules\text\include;D:\GitHub\opencv\modules\calib3d\include;D:\GitHub\opencv_contrib\modules\ccalib\include;D:\GitHub\opencv\modules\cudafeatures2d\include;D:\GitHub\opencv\modules\cudalegacy\include;D:\GitHub\opencv\modules\cudaobjdetect\include;D:\GitHub\opencv\modules\cudaoptflow\include;D:\GitHub\opencv\modules\cudastereo\include;D:\GitHub\opencv_contrib\modules\datasets\include;D:\GitHub\opencv_contrib\modules\rgbd\include;D:\GitHub\opencv_contrib\modules\stereo\include;D:\GitHub\opencv_contrib\modules\structured_light\include;D:\GitHub\opencv\modules\superres\include;D:\GitHub\opencv_contrib\modules\tracking\include;D:\GitHub\opencv\modules\videostab\include;D:\GitHub\opencv_contrib\modules\xfeatures2d\include;D:\GitHub\opencv_contrib\modules\ximgproc\include;D:\GitHub\opencv_contrib\modules\aruco\include;D:\GitHub\opencv_contrib\modules\optflow\include;D:\GitHub\opencv\modules\stitching\include;D:\GitHub\CV\include;D:\GitHub\CV\cv_wrappers\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> /machine:x64 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\GitHub\opencv\build;D:\GitHub\opencv\include;D:\GitHub\opencv\include\opencv;D:\GitHub\opencv\modules\cudev\include;D:\GitHub\opencv\modules\core\include;D:\GitHub\opencv\modules\cudaarithm\include;D:\GitHub\opencv\modules\flann\include;D:\GitHub\opencv\modules\imgproc\include;D:\GitHub\opencv\modules\ml\include;D:\GitHub\opencv\modules\objdetect\include;D:\GitHub\opencv_contrib\modules\phase_unwrapping\include;D:\GitHub\opencv_contrib\modules\plot\include;D:\GitHub\opencv_contrib\modules\reg\include;D:\GitHub\opencv_contrib\modules\surface_matching\include;D:\GitHub\opencv\modules\video\include;D:\GitHub\opencv_contrib\modules\xphoto\include;D:\GitHub\opencv_contrib\modules\bgsegm\include;D:\GitHub\opencv\modules\cudabgsegm\include;D:\GitHub\opencv\modules\cudafilters\include;D:\GitHub\opencv\modules\cudaimgproc\include;D:\GitHub\opencv\modules\cudawarping\include;D:\GitHub\opencv\modules\dnn\include;D:\GitHub\opencv_contrib\modules\face\include;D:\GitHub\opencv_contrib\modules\fuzzy\include;D:\GitHub\opencv_contrib\modules\img_hash\include;D:\GitHub\opencv\modules\imgcodecs\include;D:\GitHub\opencv\modules\photo\include;D:\GitHub\opencv\modules\shape\include;D:\GitHub\opencv\modules\videoio\include;D:\GitHub\opencv_contrib\modules\xobjdetect\include;D:\GitHub\opencv\modules\cudacodec\include;D:\GitHub\opencv\modules\highgui\include;D:\GitHub\opencv\modules\ts\include;D:\GitHub\opencv_contrib\modules\bioinspired\include;D:\GitHub\opencv_contrib\modules\dpm\include;D:\GitHub\opencv\modules\features2d\include;D:\GitHub\opencv_contrib\modules\line_descriptor\include;D:\GitHub\opencv_contrib\modules\saliency\include;D:\GitHub\opencv_contrib\modules\text\include;D:\GitHub\opencv\modules\calib3d\include;D:\GitHub\opencv_contrib\modules\ccalib\include;D:\GitHub\opencv\modules\cudafeatures2d\include;D:\GitHub\opencv\modules\cudalegacy\include;D:\GitHub\opencv\modules\cudaobjdetect\include;D:\GitHub\opencv\modules\cudaoptflow\include;D:\GitHub\opencv\modules\cudastereo\include;D:\GitHub\opencv_contrib\modules\datasets\include;D:\GitHub\opencv_contrib\modules\rgbd\include;D:\GitHub\opencv_contrib\modules\stereo\include;D:\GitHub\opencv_contrib\modules\structured_light\include;D:\GitHub\opencv\modules\superres\include;D:\GitHub\opencv_contrib\modules\tracking\include;D:\GitHub\opencv\modules\videostab\include;D:\GitHub\opencv_contrib\modules\xfeatures2d\include;D:\GitHub\opencv_contrib\modules\ximgproc\include;D:\GitHub\opencv_contrib\modules\aruco\include;D:\GitHub\opencv_contrib\modules\optflow\include;D:\GitHub\opencv\modules\stitching\include;D:\GitHub\CV\include;D:\GitHub\CV\cv_wrappers\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\GitHub\opencv\build;D:\GitHub\opencv\include;D:\GitHub\opencv\include\opencv;D:\GitHub\opencv\modules\cudev\include;D:\GitHub\opencv\modules\core\include;D:\GitHub\opencv\modules\cudaarithm\include;D:\GitHub\opencv\modules\flann\include;D:\GitHub\opencv\modules\imgproc\include;D:\GitHub\opencv\modules\ml\include;D:\GitHub\opencv\modules\objdetect\include;D:\GitHub\opencv_contrib\modules\phase_unwrapping\include;D:\GitHub\opencv_contrib\modules\plot\include;D:\GitHub\opencv_contrib\modules\reg\include;D:\GitHub\opencv_contrib\modules\surface_matching\include;D:\GitHub\opencv\modules\video\include;D:\GitHub\opencv_contrib\modules\xphoto\include;D:\GitHub\opencv_contrib\modules\bgsegm\include;D:\GitHub\opencv\modules\cudabgsegm\include;D:\GitHub\opencv\modules\cudafilters\include;D:\GitHub\opencv\modules\cudaimgproc\include;D:\GitHub\opencv\modules\cudawarping\include;D:\GitHub\opencv\modules\dnn\include;D:\GitHub\opencv_contrib\modules\face\include;D:\GitHub\opencv_contrib\modules\fuzzy\include;D:\GitHub\opencv_contrib\modules\img_hash\include;D:\GitHub\opencv\modules\imgcodecs\include;D:\GitHub\opencv\modules\photo\include;D:\GitHub\opencv\modules\shape\include;D:\GitHub\opencv\modules\videoio\include;D:\GitHub\opencv_contrib\modules\xobjdetect\include;D:\GitHub\opencv\modules\cudacodec\include;D:\GitHub\opencv\modules\highgui\include;D:\GitHub\opencv\modules\ts\include;D:\GitHub\opencv_contrib\modules\bioinspired\include;D:\GitHub\opencv_contrib\modules\dpm\include;D:\GitHub\opencv\modules\features2d\include;D:\GitHub\opencv_contrib\modules\line_descriptor\include;D:\GitHub\opencv_contrib\modules\saliency\include;D:\GitHub\opencv_contrib\modules\text\include;D:\GitHub\opencv\modules\calib3d\include;D:\GitHub\opencv_contrib\modules\ccalib\include;D:\GitHub\opencv\modules\cudafeatures2d\include;D:\GitHub\opencv\modules\cudalegacy\include;D:\GitHub\opencv\modules\cudaobjdetect\include;D:\GitHub\opencv\modules\cudaoptflow\include;D:\GitHub\opencv\modules\cudastereo\include;D:\GitHub\opencv_contrib\modules\datasets\include;D:\GitHub\opencv_contrib\modules\rgbd\include;D:\GitHub\opencv_contrib\modules\stereo\include;D:\GitHub\opencv_contrib\modules\structured_light\include;D:\GitHub\opencv\modules\superres\include;D:\GitHub\opencv_contrib\modules\tracking\include;D:\GitHub\opencv\modules\videostab\include;D:\GitHub\opencv_contrib\modules\xfeatures2d\include;D:\GitHub\opencv_contrib\modules\ximgproc\include;D:\GitHub\opencv_contrib\modules\aruco\include;D:\GitHub\opencv_contrib\modules\optflow\include;D:\GitHub\opencv\modules\stitching\include;D:\GitHub\CV\include;D:\GitHub\CV\cv_wrappers\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\GitHub\opencv\build;D:\GitHub\opencv\include;D:\GitHub\opencv\include\opencv;D:\GitHub\opencv\modules\cudev\include;D:\GitHub\opencv\modules\core\include;D:\GitHub\opencv\modules\cudaarithm\include;D:\GitHub\opencv\modules\flann\include;D:\GitHub\opencv\modules\imgproc\include;D:\GitHub\opencv\modules\ml\include;D:\GitHub\opencv\modules\objdetect\include;D:\GitHub\opencv_contrib\modules\phase_unwrapping\include;D:\GitHub\opencv_contrib\modules\plot\include;D:\GitHub\opencv_contrib\modules\reg\include;D:\GitHub\opencv_contrib\modules\surface_matching\include;D:\GitHub\opencv\modules\video\include;D:\GitHub\opencv_contrib\modules\xphoto\include;D:\GitHub\opencv_contrib\modules\bgsegm\include;D:\GitHub\opencv\modules\cudabgsegm\include;D:\GitHub\opencv\modules\cudafilters\include;D:\GitHub\opencv\modules\cudaimgproc\include;D:\GitHub\opencv\modules\cudawarping\include;D:\GitHub\opencv\modules\dnn\include;D:\GitHub\opencv_contrib\modules\face\include;D:\GitHub\opencv_contrib\modules\fuzzy\include;D:\GitHub\opencv_contrib\modules\img_hash\include;D:\GitHub\opencv\modules\imgcodecs\include;D:\GitHub\opencv\modules\photo\include;D:\GitHub\opencv\modules\shape\include;D:\GitHub\opencv\modules\videoio\include;D:\GitHub\opencv_contrib\modules\xobjdetect\include;D:\GitHub\opencv\modules\cudacodec\include;D:\GitHub\opencv\modules\highgui\include;D:\GitHub\opencv\modules\ts\include;D:\GitHub\opencv_contrib\modules\bioinspired\include;D:\GitHub\opencv_contrib\modules\dpm\include;D:\GitHub\opencv\modules\features2d\include;D:\GitHub\opencv_contrib\modules\line_descriptor\include;D:\GitHub\opencv_contrib\modules\saliency\include;D:\GitHub\opencv_contrib\modules\text\include;D:\GitHub\opencv\modules\calib3d\include;D:\GitHub\opencv_contrib\modules\ccalib\include;D:\GitHub\opencv\modules\cudafeatures2d\include;D:\GitHub\opencv\modules\cudalegacy\include;D:\GitHub\opencv\modules\cudaobjdetect\include;D:\GitHub\opencv\modules\cudaoptflow\include;D:\GitHub\opencv\modules\cudastereo\include;D:\GitHub\opencv_contrib\modules\datasets\include;D:\GitHub\opencv_contrib\modules\rgbd\include;D:\GitHub\opencv_contrib\modules\stereo\include;D:\GitHub\opencv_contrib\modules\structured_light\include;D:\GitHub\opencv\modules\superres\include;D:\GitHub\opencv_contrib\modules\tracking\include;D:\GitHub\opencv\modules\videostab\include;D:\GitHub\opencv_contrib\modules\xfeatures2d\include;D:\GitHub\opencv_contrib\modules\ximgproc\include;D:\GitHub\opencv_contrib\modules\aruco\include;D:\GitHub\opencv_contrib\modules\optflow\include;D:\GitHub\opencv\modules\stitching\include;D:\GitHub\CV\include;D:\GitHub\CV\cv_wrappers\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> /machine:x64 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\GitHub\opencv\build;D:\GitHub\opencv\include;D:\GitHub\opencv\include\opencv;D:\GitHub\opencv\modules\cudev\include;D:\GitHub\opencv\modules\core\include;D:\GitHub\opencv\modules\cudaarithm\include;D:\GitHub\opencv\modules\flann\include;D:\GitHub\opencv\modules\imgproc\include;D:\GitHub\opencv\modules\ml\include;D:\GitHub\opencv\modules\objdetect\include;D:\GitHub\opencv_contrib\modules\phase_unwrapping\include;D:\GitHub\opencv_contrib\modules\plot\include;D:\GitHub\opencv_contrib\modules\reg\include;D:\GitHub\opencv_contrib\modules\surface_matching\include;D:\GitHub\opencv\modules\video\include;D:\GitHub\opencv_contrib\modules\xphoto\include;D:\GitHub\opencv_contrib\modules\bgsegm\include;D:\GitHub\opencv\modules\cudabgsegm\include;D:\GitHub\opencv\modules\cudafilters\include;D:\GitHub\opencv\modules\cudaimgproc\include;D:\GitHub\opencv\modules\cudawarping\include;D:\GitHub\opencv\modules\dnn\include;D:\GitHub\opencv_contrib\modules\face\include;D:\GitHub\opencv_contrib\modules\fuzzy\include;D:\GitHub\opencv_contrib\modules\img_hash\include;D:\GitHub\opencv\modules\imgcodecs\include;D:\GitHub\opencv\modules\photo\include;D:\GitHub\opencv\modules\shape\include;D:\GitHub\opencv\modules\videoio\include;D:\GitHub\opencv_contrib\modules\xobjdetect\include;D:\GitHub\opencv\modules\cudacodec\include;D:\GitHub\opencv\modules\highgui\include;D:\GitHub\opencv\modules\ts\include;D:\GitHub\opencv_contrib\modules\bioinspired\include;D:\GitHub\opencv_contrib\modules\dpm\include;D:\GitHub\opencv\modules\features2d\include;D:\GitHub\opencv_contrib\modules\line_descriptor\include;D:\GitHub\opencv_contrib\modules\saliency\include;D:\GitHub\opencv_contrib\modules\text\include;D:\GitHub\opencv\modules\calib3d\include;D:\GitHub\opencv_contrib\modules\ccalib\include;D:\GitHub\opencv\modules\cudafeatures2d\include;D:\GitHub\opencv\modules\cudalegacy\include;D:\GitHub\opencv\modules\cudaobjdetect\include;D:\GitHub\opencv\modules\cudaoptflow\include;D:\GitHub\opencv\modules\cudastereo\include;D:\GitHub\opencv_contrib\modules\datasets\include;D:\GitHub\opencv_contrib\modules\rgbd\include;D:\GitHub\opencv_contrib\modules\stereo\include;D:\GitHub\opencv_contrib\modules\structured_light\include;D:\GitHub\opencv\modules\superres\include;D:\GitHub\opencv_contrib\modules\tracking\include;D:\GitHub\opencv\modules\videostab\include;D:\GitHub\opencv_contrib\modules\xfeatures2d\include;D:\GitHub\opencv_contrib\modules\ximgproc\include;D:\GitHub\opencv_contrib\modules\aruco\include;D:\GitHub\opencv_contrib\modules\optflow\include;D:\GitHub\opencv\modules\stitching\include;D:\GitHub\CV\include;D:\GitHub\CV\cv_wrappers\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\GitHub\opencv\build;D:\GitHub\opencv\include;D:\GitHub\opencv\include\opencv;D:\GitHub\opencv\modules\cudev\include;D:\GitHub\opencv\modules\core\include;D:\GitHub\opencv\modules\cudaarithm\include;D:\GitHub\opencv\modules\flann\include;D:\GitHub\opencv\modules\imgproc\include;D:\GitHub\opencv\modules\ml\include;D:\GitHub\opencv\modules\objdetect\include;D:\GitHub\opencv_contrib\modules\phase_unwrapping\include;D:\GitHub\opencv_contrib\modules\plot\include;D:\GitHub\opencv_contrib\modules\reg\include;D:\GitHub\opencv_contrib\modules\surface_matching\include;D:\GitHub\opencv\modules\video\include;D:\GitHub\opencv_contrib\modules\xphoto\include;D:\GitHub\opencv_contrib\modules\bgsegm\include;D:\GitHub\opencv\modules\cudabgsegm\include;D:\GitHub\opencv\modules\cudafilters\include;D:\GitHub\opencv\modules\cudaimgproc\include;D:\GitHub\opencv\modules\cudawarping\include;D:\GitHub\opencv\modules\dnn\include;D:\GitHub\opencv_contrib\modules\face\include;D:\GitHub\opencv_contrib\modules\fuzzy\include;D:\GitHub\opencv_contrib\modules\img_hash\include;D:\GitHub\opencv\modules\imgcodecs\include;D:\GitHub\opencv\modules\photo\include;D:\GitHub\opencv\modules\shape\include;D:\GitHub\opencv\modules\videoio\include;D:\GitHub\opencv_contrib\modules\xobjdetect\include;D:\GitHub\opencv\modules\cudacodec\include;D:\GitHub\opencv\modules\highgui\include;D:\GitHub\opencv\modules\ts\include;D:\GitHub\opencv_contrib\modules\bioinspired\include;D:\GitHub\opencv_contrib\modules\dpm\include;D:\GitHub\opencv\modules\features2d\include;D:\GitHub\opencv_contrib\modules\line_descriptor\include;D:\GitHub\opencv_contrib\modules\saliency\include;D:\GitHub\opencv_contrib\modules\text\include;D:\GitHub\opencv\modules\calib3d\include;D:\GitHub\opencv_contrib\modules\ccalib\include;D:\GitHub\opencv\modules\cudafeatures2d\include;D:\GitHub\opencv\modules\cudalegacy\include;D:\GitHub\opencv\modules\cudaobjdetect\include;D:\GitHub\opencv\modules\cudaoptflow\include;D:\GitHub\opencv\modules\cudastereo\include;D:\GitHub\opencv_contrib\modules\datasets\include;D:\GitHub\opencv_contrib\modules\rgbd\include;D:\GitHub\opencv_contrib\modules\stereo\include;D:\GitHub\opencv_contrib\modules\structured_light\include;D:\GitHub\opencv\modules\superres\include;D:\GitHub\opencv_contrib\modules\tracking\include;D:\GitHub\opencv\modules\videostab\include;D:\GitHub\opencv_contrib\modules\xfeatures2d\include;D:\GitHub\opencv_contrib\modules\ximgproc\include;D:\GitHub\opencv_contrib\modules\aruco\include;D:\GitHub\opencv_contrib\modules\optflow\include;D:\GitHub\opencv\modules\stitching\include;D:\GitHub\CV\include;D:\GitHub\CV\cv_wrappers\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\GitHub\opencv\build;D:\GitHub\opencv\include;D:\GitHub\opencv\include\opencv;D:\GitHub\opencv\modules\cudev\include;D:\GitHub\opencv\modules\core\include;D:\GitHub\opencv\modules\cudaarithm\include;D:\GitHub\opencv\modules\flann\include;D:\GitHub\opencv\modules\imgproc\include;D:\GitHub\opencv\modules\ml\include;D:\GitHub\opencv\modules\objdetect\include;D:\GitHub\opencv_contrib\modules\phase_unwrapping\include;D:\GitHub\opencv_contrib\modules\plot\include;D:\GitHub\opencv_contrib\modules\reg\include;D:\GitHub\opencv_contrib\modules\surface_matching\include;D:\GitHub\opencv\modules\video\include;D:\GitHub\opencv_contrib\modules\xphoto\include;D:\GitHub\opencv_contrib\modules\bgsegm\include;D:\GitHub\opencv\modules\cudabgsegm\include;D:\GitHub\opencv\modules\cudafilters\include;D:\GitHub\opencv\modules\cudaimgproc\include;D:\GitHub\opencv\modules\cudawarping\include;D:\GitHub\opencv\modules\dnn\include;D:\GitHub\opencv_contrib\modules\face\include;D:\GitHub\opencv_contrib\modules\fuzzy\include;D:\GitHub\opencv_contrib\modules\img_hash\include;D:\GitHub\opencv\modules\imgcodecs\include;D:\GitHub\opencv\modules\photo\include;D:\GitHub\opencv\modules\shape\include;D:\GitHub\opencv\modules\videoio\include;D:\GitHub\opencv_contrib\modules\xobjdetect\include;D:\GitHub\opencv\modules\cudacodec\include;D:\GitHub\opencv\modules\highgui\include;D:\GitHub\opencv\modules\ts\include;D:\GitHub\opencv_contrib\modules\bioinspired\include;D:\GitHub\opencv_contrib\modules\dpm\include;D:\GitHub\opencv\modules\features2d\include;D:\GitHub\opencv_contrib\modules\line_descriptor\include;D:\GitHub\opencv_contrib\modules\saliency\include;D:\GitHub\opencv_contrib\modules\text\include;D:\GitHub\opencv\modules\calib3d\include;D:\GitHub\opencv_contrib\modules\ccalib\include;D:\GitHub\opencv\modules\cudafeatures2d\include;D:\GitHub\opencv\modules\cudalegacy\include;D:\GitHub\opencv\modules\cudaobjdetect\include;D:\GitHub\opencv\modules\cudaoptflow\include;D:\GitHub\opencv\modules\cudastereo\include;D:\GitHub\opencv_contrib\modules\datasets\include;D:\GitHub\opencv_contrib\modules\rgbd\include;D:\GitHub\opencv_contrib\modules\stereo\include;D:\GitHub\opencv_contrib\modules\structured_light\include;D:\GitHub\opencv\modules\superres\include;D:\GitHub\opencv_contrib\modules\tracking\include;D:\GitHub\opencv\modules\videostab\include;D:\GitHub\opencv_contrib\modules\xfeatures2d\include;D:\GitHub\opencv_contrib\modules\ximgproc\include;D:\GitHub\opencv_contrib\modules\aruco\include;D:\GitHub\opencv_contrib\modules\optflow\include;D:\GitHub\opencv\modules\stitching\include;D:\GitHub\CV\include;D:\GitHub\CV\cv_wrappers\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> /machine:x64 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\GitHub\opencv\build;D:\GitHub\opencv\include;D:\GitHub\opencv\include\opencv;D:\GitHub\opencv\modules\cudev\include;D:\GitHub\opencv\modules\core\include;D:\GitHub\opencv\modules\cudaarithm\include;D:\GitHub\opencv\modules\flann\include;D:\GitHub\opencv\modules\imgproc\include;D:\GitHub\opencv\modules\ml\include;D:\GitHub\opencv\modules\objdetect\include;D:\GitHub\opencv_contrib\modules\phase_unwrapping\include;D:\GitHub\opencv_contrib\modules\plot\include;D:\GitHub\opencv_contrib\modules\reg\include;D:\GitHub\opencv_contrib\modules\surface_matching\include;D:\GitHub\opencv\modules\video\include;D:\GitHub\opencv_contrib\modules\xphoto\include;D:\GitHub\opencv_contrib\modules\bgsegm\include;D:\GitHub\opencv\modules\cudabgsegm\include;D:\GitHub\opencv\modules\cudafilters\include;D:\GitHub\opencv\modules\cudaimgproc\include;D:\GitHub\opencv\modules\cudawarping\include;D:\GitHub\opencv\modules\dnn\include;D:\GitHub\opencv_contrib\modules\face\include;D:\GitHub\opencv_contrib\modules\fuzzy\include;D:\GitHub\opencv_contrib\modules\img_hash\include;D:\GitHub\opencv\modules\imgcodecs\include;D:\GitHub\opencv\modules\photo\include;D:\GitHub\opencv\modules\shape\include;D:\GitHub\opencv\modules\videoio\include;D:\GitHub\opencv_contrib\modules\xobjdetect\include;D:\GitHub\opencv\modules\cudacodec\include;D:\GitHub\opencv\modules\highgui\include;D:\GitHub\opencv\modules\ts\include;D:\GitHub\opencv_contrib\modules\bioinspired\include;D:\GitHub\opencv_contrib\modules\dpm\include;D:\GitHub\opencv\modules\features2d\include;D:\GitHub\opencv_contrib\modules\line_descriptor\include;D:\GitHub\opencv_contrib\modules\saliency\include;D:\GitHub\opencv_contrib\modules\text\include;D:\GitHub\opencv\modules\calib3d\include;D:\GitHub\opencv_contrib\modules\ccalib\include;D:\GitHub\opencv\modules\cudafeatures2d\include;D:\GitHub\opencv\modules\cudalegacy\include;D:\GitHub\opencv\modules\cudaobjdetect\include;D:\GitHub\opencv\modules\cudaoptflow\include;D:\GitHub\opencv\modules\cudastereo\include;D:\GitHub\opencv_contrib\modules\datasets\include;D:\GitHub\opencv_contrib\modules\rgbd\include;D:\GitHub\opencv_contrib\modules\stereo\include;D:\GitHub\opencv_contrib\modules\structured_light\include;D:\GitHub\opencv\modules\superres\include;D:\GitHub\opencv_contrib\modules\tracking\include;D:\GitHub\opencv\modules\videostab\include;D:\GitHub\opencv_contrib\modules\xfeatures2d\include;D:\GitHub\opencv_contrib\modules\ximgproc\include;D:\GitHub\opencv_contrib\modules\aruco\include;D:\GitHub\opencv_contrib\modules\optflow\include;D:\GitHub\opencv\modules\stitching\include;D:\GitHub\CV\include;D:\GitHub\CV\cv_wrappers\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\GitHub\opencv\build;D:\GitHub\opencv\include;D:\GitHub\opencv\include\opencv;D:\GitHub\opencv\modules\cudev\include;D:\GitHub\opencv\modules\core\include;D:\GitHub\opencv\modules\cudaarithm\include;D:\GitHub\opencv\modules\flann\include;D:\GitHub\opencv\modules\imgproc\include;D:\GitHub\opencv\modules\ml\include;D:\GitHub\opencv\modules\objdetect\include;D:\GitHub\opencv_contrib\modules\phase_unwrapping\include;D:\GitHub\opencv_contrib\modules\plot\include;D:\GitHub\opencv_contrib\modules\reg\include;D:\GitHub\opencv_contrib\modules\surface_matching\include;D:\GitHub\opencv\modules\video\include;D:\GitHub\opencv_contrib\modules\xphoto\include;D:\GitHub\opencv_contrib\modules\bgsegm\include;D:\GitHub\opencv\modules\cudabgsegm\include;D:\GitHub\opencv\modules\cudafilters\include;D:\GitHub\opencv\modules\cudaimgproc\include;D:\GitHub\opencv\modules\cudawarping\include;D:\GitHub\opencv\modules\dnn\include;D:\GitHub\opencv_contrib\modules\face\include;D:\GitHub\opencv_contrib\modules\fuzzy\include;D:\GitHub\opencv_contrib\modules\img_hash\include;D:\GitHub\opencv\modules\imgcodecs\include;D:\GitHub\opencv\modules\photo\include;D:\GitHub\opencv\modules\shape\include;D:\GitHub\opencv\modules\videoio\include;D:\GitHub\opencv_contrib\modules\xobjdetect\include;D:\GitHub\opencv\modules\cudacodec\include;D:\GitHub\opencv\modules\highgui\include;D:\GitHub\opencv\modules\ts\include;D:\GitHub\opencv_contrib\modules\bioinspired\include;D:\GitHub\opencv_contrib\modules\dpm\include;D:\GitHub\opencv\modules\features2d\include;D:\GitHub\opencv_contrib\modules\line_descriptor\include;D:\GitHub\opencv_contrib\modules\saliency\include;D:\GitHub\opencv_contrib\modules\text\include;D:\GitHub\opencv\modules\calib3d\include;D:\GitHub\opencv_contrib\modules\ccalib\include;D:\GitHub\opencv\modules\cudafeatures2d\include;D:\GitHub\opencv\modules\cudalegacy\include;D:\GitHub\opencv\modules\cudaobjdetect\include;D:\GitHub\opencv\modules\cudaoptflow\include;D:\GitHub\opencv\modules\cudastereo\include;D:\GitHub\opencv_contrib\modules\datasets\include;D:\GitHub\opencv_contrib\modules\rgbd\include;D:\GitHub\opencv_contrib\modules\stereo\include;D:\GitHub\opencv_contrib\modules\structured_light\include;D:\GitHub\opencv\modules\superres\include;D:\GitHub\opencv_contrib\modules\tracking\include;D:\GitHub\opencv\modules\videostab\include;D:\GitHub\opencv_contrib\modules\xfeatures2d\include;D:\GitHub\opencv_contrib\modules\ximgproc\include;D:\GitHub\opencv_contrib\modules\aruco\include;D:\GitHub\opencv_contrib\modules\optflow\include;D:\GitHub\opencv\modules\stitching\include;D:\GitHub\CV\include;D:\GitHub\CV\cv_wrappers\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\GitHub\opencv\build;D:\GitHub\opencv\include;D:\GitHub\opencv\include\opencv;D:\GitHub\opencv\modules\cudev\include;D:\GitHub\opencv\modules\core\include;D:\GitHub\opencv\modules\cudaarithm\include;D:\GitHub\opencv\modules\flann\include;D:\GitHub\opencv\modules\imgproc\include;D:\GitHub\opencv\modules\ml\include;D:\GitHub\opencv\modules\objdetect\include;D:\GitHub\opencv_contrib\modules\phase_unwrapping\include;D:\GitHub\opencv_contrib\modules\plot\include;D:\GitHub\opencv_contrib\modules\reg\include;D:\GitHub\opencv_contrib\modules\surface_matching\include;D:\GitHub\opencv\modules\video\include;D:\GitHub\opencv_contrib\modules\xphoto\include;D:\GitHub\opencv_contrib\modules\bgsegm\include;D:\GitHub\opencv\modules\cudabgsegm\include;D:\GitHub\opencv\modules\cudafilters\include;D:\GitHub\opencv\modules\cudaimgproc\include;D:\GitHub\opencv\modules\cudawarping\include;D:\GitHub\opencv\modules\dnn\include;D:\GitHub\opencv_contrib\modules\face\include;D:\GitHub\opencv_contrib\modules\fuzzy\include;D:\GitHub\opencv_contrib\modules\img_hash\include;D:\GitHub\opencv\modules\imgcodecs\include;D:\GitHub\opencv\modules\photo\include;D:\GitHub\opencv\modules\shape\include;D:\GitHub\opencv\modules\videoio\include;D:\GitHub\opencv_contrib\modules\xobjdetect\include;D:\GitHub\opencv\modules\cudacodec\include;D:\GitHub\opencv\modules\highgui\include;D:\GitHub\opencv\modules\ts\include;D:\GitHub\opencv_contrib\modules\bioinspired\include;D:\GitHub\opencv_contrib\modules\dpm\include;D:\GitHub\opencv\modules\features2d\include;D:\GitHub\opencv_contrib\modules\line_descriptor\include;D:\GitHub\opencv_contrib\modules\saliency\include;D:\GitHub\opencv_contrib\modules\text\include;D:\GitHub\opencv\modules\calib3d\include;D:\GitHub\opencv_contrib\modules\ccalib\include;D:\GitHub\opencv\modules\cudafeatures2d\include;D:\GitHub\opencv\modules\cudalegacy\include;D:\GitHub\opencv\modules\cudaobjdetect\include;D:\GitHub\opencv\modules\cudaoptflow\include;D:\GitHub\opencv\modules\cudastereo\include;D:\GitHub\opencv_contrib\modules\datasets\include;D:\GitHub\opencv_contrib\modules\rgbd\include;D:\GitHub\opencv_contrib\modules\stereo\include;D:\GitHub\opencv_contrib\modules\structured_light\include;D:\GitHub\opencv\modules\superres\include;D:\GitHub\opencv_contrib\modules\tracking\include;D:\GitHub\opencv\modules\videostab\include;D:\GitHub\opencv_contrib\modules\xfeatures2d\include;D:\GitHub\opencv_contrib\modules\ximgproc\include;D:\GitHub\opencv_contrib\modules\aruco\include;D:\GitHub\opencv_contrib\modules\optflow\include;D:\GitHub\opencv\modules\stitching\include;D:\GitHub\CV\include;D:\GitHub\CV\cv_wrappers\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> /machine:x64 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\GitHub\CV\cv_wrappers\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/GitHub/CV/cv_wrappers/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -HD:/GitHub/CV -BD:/GitHub/CV/build --check-stamp-file D:\GitHub\CV\build\cv_wrappers\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/GitHub/CV/cv_wrappers/CMakeLists.txt;D:\GitHub\CV\cv_wrappers\CMakeLists.txt;D:\GitHub\CV\cv_wrappers\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GitHub\CV\build\cv_wrappers\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/GitHub/CV/cv_wrappers/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -HD:/GitHub/CV -BD:/GitHub/CV/build --check-stamp-file D:\GitHub\CV\build\cv_wrappers\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/GitHub/CV/cv_wrappers/CMakeLists.txt;D:\GitHub\CV\cv_wrappers\CMakeLists.txt;D:\GitHub\CV\cv_wrappers\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GitHub\CV\build\cv_wrappers\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/GitHub/CV/cv_wrappers/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -HD:/GitHub/CV -BD:/GitHub/CV/build --check-stamp-file D:\GitHub\CV\build\cv_wrappers\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:/GitHub/CV/cv_wrappers/CMakeLists.txt;D:\GitHub\CV\cv_wrappers\CMakeLists.txt;D:\GitHub\CV\cv_wrappers\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GitHub\CV\build\cv_wrappers\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/GitHub/CV/cv_wrappers/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -HD:/GitHub/CV -BD:/GitHub/CV/build --check-stamp-file D:\GitHub\CV\build\cv_wrappers\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:/GitHub/CV/cv_wrappers/CMakeLists.txt;D:\GitHub\CV\cv_wrappers\CMakeLists.txt;D:\GitHub\CV\cv_wrappers\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GitHub\CV\build\cv_wrappers\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\GitHub\CV\cv_wrappers\include\optic_flow.h" />
+    <ClInclude Include="D:\GitHub\CV\cv_wrappers\include\surf.h" />
+    <ClCompile Include="D:\GitHub\CV\cv_wrappers\source\optic_flow.cpp"  />
+    <ClCompile Include="D:\GitHub\CV\cv_wrappers\source\surf.cpp"  />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:/GitHub/CV/build/ZERO_CHECK.vcxproj">
+      <Project>3DE28579-B071-3A53-9FCB-9840383ADE14</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{E9D72332-62CE-3E4D-AA55-8563E6CA9647}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>add_dlls</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\GitHub\opencv\build;D:\GitHub\opencv\include;D:\GitHub\opencv\include\opencv;D:\GitHub\opencv\modules\cudev\include;D:\GitHub\opencv\modules\core\include;D:\GitHub\opencv\modules\cudaarithm\include;D:\GitHub\opencv\modules\flann\include;D:\GitHub\opencv\modules\imgproc\include;D:\GitHub\opencv\modules\ml\include;D:\GitHub\opencv\modules\objdetect\include;D:\GitHub\opencv_contrib\modules\phase_unwrapping\include;D:\GitHub\opencv_contrib\modules\plot\include;D:\GitHub\opencv_contrib\modules\reg\include;D:\GitHub\opencv_contrib\modules\surface_matching\include;D:\GitHub\opencv\modules\video\include;D:\GitHub\opencv_contrib\modules\xphoto\include;D:\GitHub\opencv_contrib\modules\bgsegm\include;D:\GitHub\opencv\modules\cudabgsegm\include;D:\GitHub\opencv\modules\cudafilters\include;D:\GitHub\opencv\modules\cudaimgproc\include;D:\GitHub\opencv\modules\cudawarping\include;D:\GitHub\opencv\modules\dnn\include;D:\GitHub\opencv_contrib\modules\face\include;D:\GitHub\opencv_contrib\modules\fuzzy\include;D:\GitHub\opencv_contrib\modules\img_hash\include;D:\GitHub\opencv\modules\imgcodecs\include;D:\GitHub\opencv\modules\photo\include;D:\GitHub\opencv\modules\shape\include;D:\GitHub\opencv\modules\videoio\include;D:\GitHub\opencv_contrib\modules\xobjdetect\include;D:\GitHub\opencv\modules\cudacodec\include;D:\GitHub\opencv\modules\highgui\include;D:\GitHub\opencv\modules\ts\include;D:\GitHub\opencv_contrib\modules\bioinspired\include;D:\GitHub\opencv_contrib\modules\dpm\include;D:\GitHub\opencv\modules\features2d\include;D:\GitHub\opencv_contrib\modules\line_descriptor\include;D:\GitHub\opencv_contrib\modules\saliency\include;D:\GitHub\opencv_contrib\modules\text\include;D:\GitHub\opencv\modules\calib3d\include;D:\GitHub\opencv_contrib\modules\ccalib\include;D:\GitHub\opencv\modules\cudafeatures2d\include;D:\GitHub\opencv\modules\cudalegacy\include;D:\GitHub\opencv\modules\cudaobjdetect\include;D:\GitHub\opencv\modules\cudaoptflow\include;D:\GitHub\opencv\modules\cudastereo\include;D:\GitHub\opencv_contrib\modules\datasets\include;D:\GitHub\opencv_contrib\modules\rgbd\include;D:\GitHub\opencv_contrib\modules\stereo\include;D:\GitHub\opencv_contrib\modules\structured_light\include;D:\GitHub\opencv\modules\superres\include;D:\GitHub\opencv_contrib\modules\tracking\include;D:\GitHub\opencv\modules\videostab\include;D:\GitHub\opencv_contrib\modules\xfeatures2d\include;D:\GitHub\opencv_contrib\modules\ximgproc\include;D:\GitHub\opencv_contrib\modules\aruco\include;D:\GitHub\opencv_contrib\modules\optflow\include;D:\GitHub\opencv\modules\stitching\include;D:\GitHub\CV\include;D:\GitHub\CV\cv_wrappers\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\GitHub\opencv\build;D:\GitHub\opencv\include;D:\GitHub\opencv\include\opencv;D:\GitHub\opencv\modules\cudev\include;D:\GitHub\opencv\modules\core\include;D:\GitHub\opencv\modules\cudaarithm\include;D:\GitHub\opencv\modules\flann\include;D:\GitHub\opencv\modules\imgproc\include;D:\GitHub\opencv\modules\ml\include;D:\GitHub\opencv\modules\objdetect\include;D:\GitHub\opencv_contrib\modules\phase_unwrapping\include;D:\GitHub\opencv_contrib\modules\plot\include;D:\GitHub\opencv_contrib\modules\reg\include;D:\GitHub\opencv_contrib\modules\surface_matching\include;D:\GitHub\opencv\modules\video\include;D:\GitHub\opencv_contrib\modules\xphoto\include;D:\GitHub\opencv_contrib\modules\bgsegm\include;D:\GitHub\opencv\modules\cudabgsegm\include;D:\GitHub\opencv\modules\cudafilters\include;D:\GitHub\opencv\modules\cudaimgproc\include;D:\GitHub\opencv\modules\cudawarping\include;D:\GitHub\opencv\modules\dnn\include;D:\GitHub\opencv_contrib\modules\face\include;D:\GitHub\opencv_contrib\modules\fuzzy\include;D:\GitHub\opencv_contrib\modules\img_hash\include;D:\GitHub\opencv\modules\imgcodecs\include;D:\GitHub\opencv\modules\photo\include;D:\GitHub\opencv\modules\shape\include;D:\GitHub\opencv\modules\videoio\include;D:\GitHub\opencv_contrib\modules\xobjdetect\include;D:\GitHub\opencv\modules\cudacodec\include;D:\GitHub\opencv\modules\highgui\include;D:\GitHub\opencv\modules\ts\include;D:\GitHub\opencv_contrib\modules\bioinspired\include;D:\GitHub\opencv_contrib\modules\dpm\include;D:\GitHub\opencv\modules\features2d\include;D:\GitHub\opencv_contrib\modules\line_descriptor\include;D:\GitHub\opencv_contrib\modules\saliency\include;D:\GitHub\opencv_contrib\modules\text\include;D:\GitHub\opencv\modules\calib3d\include;D:\GitHub\opencv_contrib\modules\ccalib\include;D:\GitHub\opencv\modules\cudafeatures2d\include;D:\GitHub\opencv\modules\cudalegacy\include;D:\GitHub\opencv\modules\cudaobjdetect\include;D:\GitHub\opencv\modules\cudaoptflow\include;D:\GitHub\opencv\modules\cudastereo\include;D:\GitHub\opencv_contrib\modules\datasets\include;D:\GitHub\opencv_contrib\modules\rgbd\include;D:\GitHub\opencv_contrib\modules\stereo\include;D:\GitHub\opencv_contrib\modules\structured_light\include;D:\GitHub\opencv\modules\superres\include;D:\GitHub\opencv_contrib\modules\tracking\include;D:\GitHub\opencv\modules\videostab\include;D:\GitHub\opencv_contrib\modules\xfeatures2d\include;D:\GitHub\opencv_contrib\modules\ximgproc\include;D:\GitHub\opencv_contrib\modules\aruco\include;D:\GitHub\opencv_contrib\modules\optflow\include;D:\GitHub\opencv\modules\stitching\include;D:\GitHub\CV\include;D:\GitHub\CV\cv_wrappers\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\GitHub\opencv\build;D:\GitHub\opencv\include;D:\GitHub\opencv\include\opencv;D:\GitHub\opencv\modules\cudev\include;D:\GitHub\opencv\modules\core\include;D:\GitHub\opencv\modules\cudaarithm\include;D:\GitHub\opencv\modules\flann\include;D:\GitHub\opencv\modules\imgproc\include;D:\GitHub\opencv\modules\ml\include;D:\GitHub\opencv\modules\objdetect\include;D:\GitHub\opencv_contrib\modules\phase_unwrapping\include;D:\GitHub\opencv_contrib\modules\plot\include;D:\GitHub\opencv_contrib\modules\reg\include;D:\GitHub\opencv_contrib\modules\surface_matching\include;D:\GitHub\opencv\modules\video\include;D:\GitHub\opencv_contrib\modules\xphoto\include;D:\GitHub\opencv_contrib\modules\bgsegm\include;D:\GitHub\opencv\modules\cudabgsegm\include;D:\GitHub\opencv\modules\cudafilters\include;D:\GitHub\opencv\modules\cudaimgproc\include;D:\GitHub\opencv\modules\cudawarping\include;D:\GitHub\opencv\modules\dnn\include;D:\GitHub\opencv_contrib\modules\face\include;D:\GitHub\opencv_contrib\modules\fuzzy\include;D:\GitHub\opencv_contrib\modules\img_hash\include;D:\GitHub\opencv\modules\imgcodecs\include;D:\GitHub\opencv\modules\photo\include;D:\GitHub\opencv\modules\shape\include;D:\GitHub\opencv\modules\videoio\include;D:\GitHub\opencv_contrib\modules\xobjdetect\include;D:\GitHub\opencv\modules\cudacodec\include;D:\GitHub\opencv\modules\highgui\include;D:\GitHub\opencv\modules\ts\include;D:\GitHub\opencv_contrib\modules\bioinspired\include;D:\GitHub\opencv_contrib\modules\dpm\include;D:\GitHub\opencv\modules\features2d\include;D:\GitHub\opencv_contrib\modules\line_descriptor\include;D:\GitHub\opencv_contrib\modules\saliency\include;D:\GitHub\opencv_contrib\modules\text\include;D:\GitHub\opencv\modules\calib3d\include;D:\GitHub\opencv_contrib\modules\ccalib\include;D:\GitHub\opencv\modules\cudafeatures2d\include;D:\GitHub\opencv\modules\cudalegacy\include;D:\GitHub\opencv\modules\cudaobjdetect\include;D:\GitHub\opencv\modules\cudaoptflow\include;D:\GitHub\opencv\modules\cudastereo\include;D:\GitHub\opencv_contrib\modules\datasets\include;D:\GitHub\opencv_contrib\modules\rgbd\include;D:\GitHub\opencv_contrib\modules\stereo\include;D:\GitHub\opencv_contrib\modules\structured_light\include;D:\GitHub\opencv\modules\superres\include;D:\GitHub\opencv_contrib\modules\tracking\include;D:\GitHub\opencv\modules\videostab\include;D:\GitHub\opencv_contrib\modules\xfeatures2d\include;D:\GitHub\opencv_contrib\modules\ximgproc\include;D:\GitHub\opencv_contrib\modules\aruco\include;D:\GitHub\opencv_contrib\modules\optflow\include;D:\GitHub\opencv\modules\stitching\include;D:\GitHub\CV\include;D:\GitHub\CV\cv_wrappers\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\GitHub\opencv\build;D:\GitHub\opencv\include;D:\GitHub\opencv\include\opencv;D:\GitHub\opencv\modules\cudev\include;D:\GitHub\opencv\modules\core\include;D:\GitHub\opencv\modules\cudaarithm\include;D:\GitHub\opencv\modules\flann\include;D:\GitHub\opencv\modules\imgproc\include;D:\GitHub\opencv\modules\ml\include;D:\GitHub\opencv\modules\objdetect\include;D:\GitHub\opencv_contrib\modules\phase_unwrapping\include;D:\GitHub\opencv_contrib\modules\plot\include;D:\GitHub\opencv_contrib\modules\reg\include;D:\GitHub\opencv_contrib\modules\surface_matching\include;D:\GitHub\opencv\modules\video\include;D:\GitHub\opencv_contrib\modules\xphoto\include;D:\GitHub\opencv_contrib\modules\bgsegm\include;D:\GitHub\opencv\modules\cudabgsegm\include;D:\GitHub\opencv\modules\cudafilters\include;D:\GitHub\opencv\modules\cudaimgproc\include;D:\GitHub\opencv\modules\cudawarping\include;D:\GitHub\opencv\modules\dnn\include;D:\GitHub\opencv_contrib\modules\face\include;D:\GitHub\opencv_contrib\modules\fuzzy\include;D:\GitHub\opencv_contrib\modules\img_hash\include;D:\GitHub\opencv\modules\imgcodecs\include;D:\GitHub\opencv\modules\photo\include;D:\GitHub\opencv\modules\shape\include;D:\GitHub\opencv\modules\videoio\include;D:\GitHub\opencv_contrib\modules\xobjdetect\include;D:\GitHub\opencv\modules\cudacodec\include;D:\GitHub\opencv\modules\highgui\include;D:\GitHub\opencv\modules\ts\include;D:\GitHub\opencv_contrib\modules\bioinspired\include;D:\GitHub\opencv_contrib\modules\dpm\include;D:\GitHub\opencv\modules\features2d\include;D:\GitHub\opencv_contrib\modules\line_descriptor\include;D:\GitHub\opencv_contrib\modules\saliency\include;D:\GitHub\opencv_contrib\modules\text\include;D:\GitHub\opencv\modules\calib3d\include;D:\GitHub\opencv_contrib\modules\ccalib\include;D:\GitHub\opencv\modules\cudafeatures2d\include;D:\GitHub\opencv\modules\cudalegacy\include;D:\GitHub\opencv\modules\cudaobjdetect\include;D:\GitHub\opencv\modules\cudaoptflow\include;D:\GitHub\opencv\modules\cudastereo\include;D:\GitHub\opencv_contrib\modules\datasets\include;D:\GitHub\opencv_contrib\modules\rgbd\include;D:\GitHub\opencv_contrib\modules\stereo\include;D:\GitHub\opencv_contrib\modules\structured_light\include;D:\GitHub\opencv\modules\superres\include;D:\GitHub\opencv_contrib\modules\tracking\include;D:\GitHub\opencv\modules\videostab\include;D:\GitHub\opencv_contrib\modules\xfeatures2d\include;D:\GitHub\opencv_contrib\modules\ximgproc\include;D:\GitHub\opencv_contrib\modules\aruco\include;D:\GitHub\opencv_contrib\modules\optflow\include;D:\GitHub\opencv\modules\stitching\include;D:\GitHub\CV\include;D:\GitHub\CV\cv_wrappers\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\GitHub\CV\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/GitHub/CV/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -HD:/GitHub/CV -BD:/GitHub/CV/build --check-stamp-file D:\GitHub\CV\build\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/GitHub/CV/CMakeLists.txt;D:\GitHub\CV\CMakeLists.txt;D:\GitHub\CV\build\CMakeFiles\3.7.0\CMakeSystem.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInitialize.cmake;D:\GitHub\CV\build\CMakeFiles\3.7.0\CMakeCCompiler.cmake;D:\GitHub\CV\build\CMakeFiles\3.7.0\CMakeCXXCompiler.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeGenericSystem.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\WindowsPaths.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;D:\GitHub\CV\build\CMakeFiles\3.7.0\CMakeRCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeRCInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCXXInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;D:\GitHub\opencv\build\OpenCVConfig-version.cmake;D:\GitHub\opencv\build\OpenCVConfig.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindCUDA.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindCUDA\select_compute_arch.cmake;D:\GitHub\opencv\build\OpenCVModules.cmake;D:\GitHub\CV\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GitHub\CV\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/GitHub/CV/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -HD:/GitHub/CV -BD:/GitHub/CV/build --check-stamp-file D:\GitHub\CV\build\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/GitHub/CV/CMakeLists.txt;D:\GitHub\CV\CMakeLists.txt;D:\GitHub\CV\build\CMakeFiles\3.7.0\CMakeSystem.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInitialize.cmake;D:\GitHub\CV\build\CMakeFiles\3.7.0\CMakeCCompiler.cmake;D:\GitHub\CV\build\CMakeFiles\3.7.0\CMakeCXXCompiler.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeGenericSystem.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\WindowsPaths.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;D:\GitHub\CV\build\CMakeFiles\3.7.0\CMakeRCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeRCInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCXXInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;D:\GitHub\opencv\build\OpenCVConfig-version.cmake;D:\GitHub\opencv\build\OpenCVConfig.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindCUDA.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindCUDA\select_compute_arch.cmake;D:\GitHub\opencv\build\OpenCVModules.cmake;D:\GitHub\CV\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GitHub\CV\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/GitHub/CV/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -HD:/GitHub/CV -BD:/GitHub/CV/build --check-stamp-file D:\GitHub\CV\build\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:/GitHub/CV/CMakeLists.txt;D:\GitHub\CV\CMakeLists.txt;D:\GitHub\CV\build\CMakeFiles\3.7.0\CMakeSystem.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInitialize.cmake;D:\GitHub\CV\build\CMakeFiles\3.7.0\CMakeCCompiler.cmake;D:\GitHub\CV\build\CMakeFiles\3.7.0\CMakeCXXCompiler.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeGenericSystem.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\WindowsPaths.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;D:\GitHub\CV\build\CMakeFiles\3.7.0\CMakeRCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeRCInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCXXInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;D:\GitHub\opencv\build\OpenCVConfig-version.cmake;D:\GitHub\opencv\build\OpenCVConfig.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindCUDA.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindCUDA\select_compute_arch.cmake;D:\GitHub\opencv\build\OpenCVModules.cmake;D:\GitHub\CV\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GitHub\CV\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/GitHub/CV/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -HD:/GitHub/CV -BD:/GitHub/CV/build --check-stamp-file D:\GitHub\CV\build\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:/GitHub/CV/CMakeLists.txt;D:\GitHub\CV\CMakeLists.txt;D:\GitHub\CV\build\CMakeFiles\3.7.0\CMakeSystem.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInitialize.cmake;D:\GitHub\CV\build\CMakeFiles\3.7.0\CMakeCCompiler.cmake;D:\GitHub\CV\build\CMakeFiles\3.7.0\CMakeCXXCompiler.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeGenericSystem.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\WindowsPaths.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;D:\GitHub\CV\build\CMakeFiles\3.7.0\CMakeRCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeRCInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCXXInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;D:\GitHub\opencv\build\OpenCVConfig-version.cmake;D:\GitHub\opencv\build\OpenCVConfig.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindCUDA.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;D:\Program Files\CMake\share\cmake-3.7\Modules\FindCUDA\select_compute_arch.cmake;D:\GitHub\opencv\build\OpenCVModules.cmake;D:\GitHub\CV\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GitHub\CV\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\GitHub\CV\build\CMakeFiles\032cb462a66129388f3c08abbb803b65\add_dlls.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_core330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_highgui330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_videoio330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_imgcodecs330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_imgproc330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_xfeatures2d330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_cudafeatures2d330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_features2d330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_cudafilters330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_cudawarping330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_cudaarithm330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_flann330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_video330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/CV/bin/ovrvisiond.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/GitHub/CV/build/CMakeFiles/032cb462a66129388f3c08abbb803b65/add_dlls.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GitHub\CV\build\CMakeFiles\add_dlls</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_core330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_highgui330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_videoio330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_imgcodecs330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_imgproc330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_xfeatures2d330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_cudafeatures2d330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_features2d330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_cudafilters330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_cudawarping330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_cudaarithm330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_flann330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_video330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/CV/bin/ovrvisiond.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/GitHub/CV/build/CMakeFiles/032cb462a66129388f3c08abbb803b65/add_dlls.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GitHub\CV\build\CMakeFiles\add_dlls</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_core330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_highgui330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_videoio330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_imgcodecs330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_imgproc330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_xfeatures2d330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_cudafeatures2d330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_features2d330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_cudafilters330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_cudawarping330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_cudaarithm330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_flann330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_video330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/CV/bin/ovrvisiond.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:/GitHub/CV/build/CMakeFiles/032cb462a66129388f3c08abbb803b65/add_dlls.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GitHub\CV\build\CMakeFiles\add_dlls</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_core330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_highgui330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_videoio330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_imgcodecs330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_imgproc330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_xfeatures2d330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_cudafeatures2d330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_features2d330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_cudafilters330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_cudawarping330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_cudaarithm330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_flann330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/opencv/build/bin/debug/opencv_video330d.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Program Files\CMake\bin\cmake.exe" -E copy D:/GitHub/CV/bin/ovrvisiond.dll D:/GitHub/CV/build/Debug/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:/GitHub/CV/build/CMakeFiles/032cb462a66129388f3c08abbb803b65/add_dlls.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GitHub\CV\build\CMakeFiles\add_dlls</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\GitHub\CV\build\CMakeFiles\add_dlls" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:/GitHub/CV/build/ZERO_CHECK.vcxproj">
+      <Project>3DE28579-B071-3A53-9FCB-9840383ADE14</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

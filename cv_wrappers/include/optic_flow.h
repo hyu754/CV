@@ -14,8 +14,12 @@ private:
 	//variables for optic flow
 	cv::Mat gray, prevGray, image, frame, frame2;
 	std::vector<cv::Point2f> points[2];
+	std::vector<cv::Point2f> original_position;//vector to store the original position of the poitns
 	vector<uchar> status;
 	Point2f point;
+
+	//Boolean variable to determine if initial points are established
+	bool initialized = false;
 public:
 	
 	//initialize key feature points to track.
@@ -34,8 +38,7 @@ public:
 	//Get frame
 	void get_frame(cv::Mat in_frame){ frame = in_frame; }
 
-	//Boolean variable to determine if initial points are established
-	bool initialized = false;
+	
 
 	//add points to optic flow
 	void add_points(cv::Point2f in_point);
@@ -54,6 +57,12 @@ public:
 
 	//History points
 	std::vector<cv::Point2f> history;
+
+	//set initialize bool
+	void set_initialized_bool(bool input_bool){ initialized = input_bool; }
+
+	//get initialized bool
+	bool get_initialized_bool(void){ return initialized; }
 
 	optic_flow();
 	~optic_flow();

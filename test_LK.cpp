@@ -13,6 +13,7 @@
 
 #include <opencv2/cudastereo.hpp>
 #include <opencv2/cudaimgproc.hpp>
+#include "surf.h"
 //#include <opencv2/aruco/charuco.hpp>
 
 
@@ -58,42 +59,46 @@ int main(int argc, char* argv[])
 	if (!cap.isOpened()){
 		return -1;
 	}
-	//Mat img_2 = Mat(1000, 1000, CV_8UC1);
-	Mat img_1 = imread("green_dots.PNG", IMREAD_COLOR);//object
-		
-	Mat img_2 = imread("green_dots.PNG", IMREAD_COLOR);//scene
-		
-	cv::resize(img_2, img_2, cv::Size(300, 300));
-	cv::resize(img_1, img_1, cv::Size(500, 500));
-	cv::imshow("original image", img_1);
-	cv::cvtColor(img_2, img_2, cv::COLOR_RGB2GRAY);
-	cv::cvtColor(img_1, img_1, cv::COLOR_RGB2GRAY);
+	////Mat img_2 = Mat(1000, 1000, CV_8UC1);
+	//Mat img_1 = imread("green_dots.PNG", IMREAD_COLOR);//object
+	//	
+	//Mat img_2 = imread("green_dots.PNG", IMREAD_COLOR);//scene
+	//	
+	//cv::resize(img_2, img_2, cv::Size(300, 300));
+	//cv::resize(img_1, img_1, cv::Size(500, 500));
+	//cv::imshow("original image", img_1);
+	//cv::cvtColor(img_2, img_2, cv::COLOR_RGB2GRAY);
+	//cv::cvtColor(img_1, img_1, cv::COLOR_RGB2GRAY);
 
-	/*cv::Mat hsv_channels1[3];
-	cv::Mat hsv_channels2[3];
-		
-	cv::split(img_1, hsv_channels1);
-	cv::split(img_2, hsv_channels2);
+	///*cv::Mat hsv_channels1[3];
+	//cv::Mat hsv_channels2[3];
+	//	
+	//cv::split(img_1, hsv_channels1);
+	//cv::split(img_2, hsv_channels2);
 
-		
-	img_1 = hsv_channels1[2];
-	img_2 = hsv_channels2[2];*/
+	//	
+	//img_1 = hsv_channels1[2];
+	//img_2 = hsv_channels2[2];*/
 
-	cv::GaussianBlur(img_1, img_1, cv::Size(5, 5), 2);
-	cv::GaussianBlur(img_2, img_2, cv::Size(5, 5), 2);
-	imshow("1", img_1);
-	imshow("2", img_2);
-	//cvtColor(img_1, img_1, CV_8UC1);
-	std::cout << "Initializing cuda image containers" << std::endl;
-	//cvtColor(img_2, img_2, CV_8UC1);
-	imshow("1", img_1);
-	imshow("2", img_2);
-
+	//
+	//cv::GaussianBlur(img_2, img_2, cv::Size(5, 5), 2);
+	//imshow("1", img_1);
+	//imshow("2", img_2);
+	////cvtColor(img_1, img_1, CV_8UC1);
+	//std::cout << "Initializing cuda image containers" << std::endl;
+	////cvtColor(img_2, img_2, CV_8UC1);
+	//imshow("1", img_1);
+	//imshow("2", img_2);
+	cv::Mat img_1, img_2;
 	img1.create(1, 1, CV_8U);
 	img2.create(1, 1, CV_8U);
+	
+	cap >> img_1;
+	
+	cv::cvtColor(img_1, img_1, CV_BGR2GRAY);
+	//cv::GaussianBlur(img_1, img_1, cv::Size(5, 5), 2);
 	img1.upload(img_1);//object
-
-	img2.upload(img_2);//scene
+	//img2.upload(img_2);//scene
 	//Mat outputimg2 = img1.download();
 	//imshow("a",Mat(img2));
 	cv::cuda::printShortCudaDeviceInfo(cv::cuda::getDevice());
@@ -103,27 +108,58 @@ int main(int argc, char* argv[])
 
 	// detecting keypoints & computing descriptors
 
-	Mat Frame;
-	cap >> Frame;
-	cv::cvtColor(Frame, Frame, CV_BGR2GRAY);
-	img1.upload(Frame);
-
+	cv::Mat Frame;
 	//initialize lk alg
 	optic_flow OF;
 	
+
+
+	surf_track OS;
+	cap >> img_1;
+	OS.get_image_1(img_1);
 	for (;;){
+
 		cap >> Frame;
 		OF.get_frame(Frame);
 		OF.run_LK("LK FLOW");
+
+		char key_input = cv::waitKey(1);
+		if (key_input == ' '){
+			OF.set_initialized_bool(false);
+   			std::cout << " " << std::endl;
+		}
+		if (OF.get_initialized_bool() == false){
+			OS.get_image_1(Frame);
+			OS.get_image_2(Frame);
+			OS.run_surf(true);
+			OF.clear_points();
+			std::vector<cv::Point2f> points_vector = OS.return_keypoints(1);
+			if (points_vector.size()>0)
+				OF.initialize_points(points_vector);
+		}
+
+
+		//OF.run_LK("LK FLOW");
+		//cv::cvtColor(Frame, Frame, CV_BGR2GRAY);
+	
+		
+	}
+
+
+
+	for (;;){
+		cap >> Frame;
+		OF.get_frame(Frame);
+		//OF.run_LK("LK FLOW");
 		cv::cvtColor(Frame, Frame, CV_BGR2GRAY);
 		/*cv::Mat channels[3];
 		cv::split(Frame, channels);
 		Frame = channels[2];*/
-		cv::GaussianBlur(Frame, Frame, cv::Size(5, 5), 2);
+		//cv::GaussianBlur(Frame, Frame, cv::Size(5, 5), 2);
 		cv::imshow("camera", Frame);
 
 		//for (int i = 0; i < 20; i++){
-		img1.upload(img_1);
+		//img1.upload(img_1);
 		img2.upload(Frame);//scene
 		GpuMat keypoints1GPU, keypoints2GPU;
 		GpuMat descriptors1GPU, descriptors2GPU;
@@ -150,17 +186,28 @@ int main(int argc, char* argv[])
 			
 			surf.downloadDescriptors(descriptors1GPU, descriptors1);
 			surf.downloadDescriptors(descriptors2GPU, descriptors2);
-			if (OF.initialized == false){
+			if (OF.get_initialized_bool() == false){
 				std::vector<cv::Point2f> points_vector;
 				cv::KeyPoint::convert(keypoints2, points_vector);
 				
+				/*std::vector<cv::Point2f> valid_points_track;
+				int _count_ = 0;
+				for (auto descriptors1_ptr = descriptors1.begin(); descriptors1_ptr != descriptors1.end(); ++descriptors1_ptr){
+
+					if (abs(*descriptors1_ptr) < 0.5){
+
+						valid_points_track.push_back(points_vector.at(_count_));
+					}
+					_count_++; 
+				}
+*/
 				OF.initialize_points(points_vector);
 				
-				OF.initialized = true;
+				OF.set_initialized_bool( true);
 
 			}
 			
-			OF.run_LK("LK FLOW");
+			//OF.run_LK("LK FLOW");
 			// drawing the results
 			Mat img_matches;
 			double max_dist = 0; double min_dist = 1000;
@@ -175,7 +222,7 @@ int main(int argc, char* argv[])
 
 			for (int l = 0; l < matches.size(); l++)
 			{
-				if (matches[l].distance < 0 * min_dist)
+				if (matches[l].distance < 1.5 * min_dist)
 				{
 					good_matches.push_back(matches[l]);
 				}

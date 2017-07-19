@@ -61,12 +61,26 @@
 			return -1;
 		}
 		//Mat img_2 = Mat(1000, 1000, CV_8UC1);
-		Mat img_1 = imread("green_dots.PNG", IMREAD_GRAYSCALE);//object
+		Mat img_1 = imread("green_dots.PNG", IMREAD_COLOR);//object
 		
-		Mat img_2 = imread("green_dots.PNG", IMREAD_GRAYSCALE);//scene
+		Mat img_2 = imread("green_dots.PNG", IMREAD_COLOR);//scene
 		
 		cv::resize(img_2, img_2, cv::Size(300, 300));
 		cv::resize(img_1, img_1, cv::Size(500, 500));
+		cv::imshow("original image", img_1);
+		cv::cvtColor(img_2, img_2, cv::COLOR_RGB2GRAY);
+		cv::cvtColor(img_1, img_1, cv::COLOR_RGB2GRAY);
+
+		/*cv::Mat hsv_channels1[3];
+		cv::Mat hsv_channels2[3];
+		
+		cv::split(img_1, hsv_channels1);
+		cv::split(img_2, hsv_channels2);
+
+		
+		img_1 = hsv_channels1[2];
+		img_2 = hsv_channels2[2];*/
+
 		cv::GaussianBlur(img_1, img_1, cv::Size(5, 5), 2);
 		cv::GaussianBlur(img_2, img_2, cv::Size(5, 5), 2);
 		imshow("1", img_1);
@@ -86,7 +100,7 @@
 		//imshow("a",Mat(img2));
 		cv::cuda::printShortCudaDeviceInfo(cv::cuda::getDevice());
 
-		SURF_CUDA surf(600);
+		SURF_CUDA surf(300);
 
 
 		// detecting keypoints & computing descriptors
@@ -100,7 +114,11 @@
 		for (;;){
 			cap >> Frame;
 			cv::cvtColor(Frame, Frame, CV_BGR2GRAY);
+			/*cv::Mat channels[3];
+			cv::split(Frame, channels);
+			Frame = channels[2];*/
 			cv::GaussianBlur(Frame, Frame, cv::Size(5, 5), 2);
+			cv::imshow("camera", Frame);
 			//for (int i = 0; i < 20; i++){
 			img1.upload(img_1);
 			img2.upload(Frame);//scene
@@ -142,7 +160,7 @@
 
 				for (int l = 0; l < matches.size(); l++)
 				{
-					if (matches[l].distance < 1.5 * min_dist)
+					if (matches[l].distance < 2.2 * min_dist)
 					{
 						good_matches.push_back(matches[l]);
 					}
@@ -151,8 +169,9 @@
 
 				//namedWindow("matches", 0);
 				imshow("matches", img_matches);
-				waitKey(1);
+				
 			}
+			waitKey(1);
 		}
 
 		//}
