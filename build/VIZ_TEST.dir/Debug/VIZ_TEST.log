@@ -1,0 +1,3 @@
+﻿  test_VIZ.cpp
+D:\GitHub\CV\test_VIZ.cpp(267): warning C4244: 'initializing' : conversion from 'clock_t' to 'float', possible loss of data
+  VIZ_TEST.vcxproj -> D:\GitHub\CV\build\Debug\VIZ_TEST.exe

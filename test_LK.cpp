@@ -13,6 +13,7 @@
 
 #include <opencv2/cudastereo.hpp>
 #include <opencv2/cudaimgproc.hpp>
+
 #include "surf.h"
 //#include <opencv2/aruco/charuco.hpp>
 
@@ -59,6 +60,7 @@ int main(int argc, char* argv[])
 	if (!cap.isOpened()){
 		return -1;
 	}
+	
 	////Mat img_2 = Mat(1000, 1000, CV_8UC1);
 	//Mat img_1 = imread("green_dots.PNG", IMREAD_COLOR);//object
 	//	
@@ -108,7 +110,7 @@ int main(int argc, char* argv[])
 
 	// detecting keypoints & computing descriptors
 
-	cv::Mat Frame;
+	
 	//initialize lk alg
 	optic_flow OF;
 	
@@ -117,6 +119,7 @@ int main(int argc, char* argv[])
 	surf_track OS;
 	cap >> img_1;
 	OS.get_image_1(img_1);
+	cv::Mat Frame = cv::Mat(img_1.rows, img_1.cols, CV_8UC4);;
 	for (;;){
 
 		cap >> Frame;
@@ -137,6 +140,9 @@ int main(int argc, char* argv[])
 			if (points_vector.size()>0)
 				OF.initialize_points(points_vector);
 		}
+
+		
+		
 
 
 		//OF.run_LK("LK FLOW");
