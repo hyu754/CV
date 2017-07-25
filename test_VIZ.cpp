@@ -18,7 +18,7 @@
 #include "aruco_tools.h"
 //#include <opencv2/aruco/charuco.hpp>
 
-
+#include "viz_tools.h"
 
 #include "optic_flow.h"
 using namespace std;
@@ -94,6 +94,71 @@ int main(int argc, char* argv[])
 	//imshow("2", img_2);
 	
 	/// Create a window
+
+
+	cv::Mat input_image;
+	cap >> input_image;
+
+
+	viz_tools viz_class;
+	viz_class.set_window_size(input_image.size());
+	viz_class.set_virtual_camera_intrinsics();
+	
+	viz_class.create_plane(cv::Vec2d(20, 20));
+	viz_class.set_camera_position();
+	viz_class.set_camera();
+	stereo_ar ar_class;
+	while (1){
+		cap >> input_image;
+		std::vector<cv::Point2f> out_vector_unordered = ar_class.find_aruco_center_four_corners(input_image);
+		int text_counter = 0;
+		for (auto ptr_auto = out_vector_unordered.begin(); ptr_auto != out_vector_unordered.end(); ++ptr_auto){
+			cv::circle(input_image, *ptr_auto, 5, cv::Scalar(255, 100, 100), 5);
+			cv::putText(input_image, std::to_string(text_counter), *ptr_auto, 1, 2, cv::Scalar(10, 200, 100));
+			text_counter++;
+		}
+		cv::imshow("input_image", input_image);
+		cv::waitKey(1);
+		std::vector<int> indicies2d, indicies3d;
+		indicies2d.push_back(0);
+		indicies2d.push_back(1);
+		indicies2d.push_back(2);
+		indicies2d.push_back(3);
+
+		indicies3d.push_back(0);
+		indicies3d.push_back(1);
+		indicies3d.push_back(3);
+		indicies3d.push_back(2);
+
+		//Temporary solution
+		std::vector<cv::Point3f> points;
+		
+
+		cv::Vec2d size_plane = cv::Vec2d(20, 20);
+		points.push_back(cv::Point3f(0, 0, 0));
+		points.push_back(cv::Point3f(0, size_plane(1), 0));
+		points.push_back(cv::Point3f(size_plane(0), 0, 0));
+		points.push_back(cv::Point3f(size_plane(0), size_plane(1), 0));
+
+		if (points.size() == out_vector_unordered.size()){
+			cv:Affine3f pose= viz_class.solve_pnp_matrix(points, indicies3d, out_vector_unordered, indicies2d);
+			cv::Mat augmented_image  = viz_class.augment_mesh(input_image,"plane", pose);
+			cv::imshow("augmented image", augmented_image);
+			cv::waitKey(1);
+
+		}
+
+
+		viz_class.render();
+
+	}
+
+
+
+
+
+
+
 	cv::viz::Viz3d myWindow("Viz Demo");
 	/// Add coordinate axes
 	//myWindow.showWidget("Coordinate Widget", viz::WCoordinateSystem());
@@ -131,16 +196,21 @@ int main(int argc, char* argv[])
 	}
 
 
-	cv::Mat input_image;
-	cap >> input_image;
+
 	int rows = input_image.rows;
 	int cols = input_image.cols;
 
-	float aruco_length =2000;
-	point2.push_back(Vec3d(-aruco_length / 2, -aruco_length / 2, 10));
-	point2.push_back(Vec3d(-aruco_length / 2, aruco_length / 2, 10));
-	point2.push_back(Vec3d(aruco_length / 2, -aruco_length / 2, 10));
-	point2.push_back(Vec3d(aruco_length / 2, aruco_length / 2, 10));
+	//float aruco_length =2000;
+	//point2.push_back(Vec3d(0,0, 0));
+	//point2.push_back(Vec3d(0, 480, 0));
+	//point2.push_back(Vec3d(640, 0, 0));
+	//point2.push_back(Vec3d(640, 480, 0));
+
+	float aruco_length = 40.0f;
+	point2.push_back(Vec3d(0, 0, 0));
+	point2.push_back(Vec3d(0, aruco_length, 0));
+	point2.push_back(Vec3d(aruco_length, 0, 0));
+	point2.push_back(Vec3d(aruco_length, aruco_length, 0));
 
 	tcoords2.push_back(Vec2d(1, 1));
 	tcoords2.push_back(Vec2d(1, 0));
@@ -159,42 +229,43 @@ int main(int argc, char* argv[])
 		polygons.insert(polygons.end(), polys, polys + sizeof(polys) / sizeof(polys[0]));
 	}
 	int polys2[] = { 0, 1, 2, 3 };
-	polygons2.push_back(4);
+	polygons2.push_back(3);
 	polygons2.push_back(3);
 	polygons2.push_back(2);
 	polygons2.push_back(1);
-	polygons2.push_back(0);
+	//polygons2.push_back(0);
 
 	cv::viz::Mesh mesh;
 	cv::viz::Mesh plane;
-	cv::viz::Mesh geo=	cv::viz::readMesh("parasaurolophus_6700.ply");
-//	geo.load("parasaurolophus_6700.obj", cv::viz::Mesh::LOAD_OBJ);
+	cv::viz::Mesh geo = cv::viz::readMesh("geometry.ply");
+	//geo.load("geometry.ply", cv::viz::Mesh::LOAD_PLY);
 
 	mesh.cloud = Mat(points, true).reshape(3, 1);
 	mesh.tcoords = Mat(tcoords, true).reshape(2, 1);
 	mesh.polygons = Mat(polygons, true).reshape(1, 1);
 
 	plane.cloud = Mat(point2, true).reshape(3, 1);
-	plane.tcoords = Mat(tcoords2, true).reshape(2, 1);
+	//plane.tcoords = Mat(tcoords2, true).reshape(2, 1);
 	plane.polygons = Mat(polygons2, true).reshape(1, 1);
-
+	
 
 	mesh.texture = input_image;
-	
+	//plane.texture = cv::viz::Color(100, 0, 0);
+
 	//myWindow.showWidget("mesh", cv::viz::WMesh(mesh));
-	myWindow.showWidget("plane", cv::viz::WMesh(plane));
+	
 	//myWindow.showWidget("dinosaur", cv::viz::WMesh(geo));
 
-	
+	//myWindow.showWidget("plane", cv::viz::WMesh(plane));
 	myWindow.setWindowSize(cv::Size(input_image.cols, input_image.rows));
 	/// Let's assume camera has the following properties
-	float focal_length =- 640.0f;
+	float focal_length = 640.0f;
 
 
 
 
 	int _counter_ = 0;
-	Vec3f cam_pos(0, 0, focal_length ), cam_focal_point(0, 0, 100), cam_y_dir(1.0, 0.0, 0.0f);
+	Vec3f cam_pos(input_image.cols / 2, input_image.rows / 2, focal_length), cam_focal_point(input_image.cols / 2, input_image.rows / 2, 0), cam_y_dir(-1.0, 0.0, 0.0f);
 	Affine3f cam_pose = viz::makeCameraPose(cam_pos, cam_focal_point, cam_y_dir);
 	
 
@@ -203,7 +274,7 @@ int main(int argc, char* argv[])
 
 
 
-	stereo_ar ar_class;
+
 //	float _counter_ = 0;
 
 	//get camera matrix
@@ -213,7 +284,10 @@ int main(int argc, char* argv[])
 		0, 0, 1);
 
 	myWindow.showWidget("plane", cv::viz::WMesh(plane));
-
+	double fx = camMat.at<float>(0, 0);
+	double fy = camMat.at<float>(1, 1);
+	double cx = camMat.at<float>(0, 2);
+	double cy = camMat.at<float>(1, 2);
 
 	/*double fx = camMat.at<float>(0, 0);
 	double fy = camMat.at<float>(1, 1);
@@ -234,7 +308,7 @@ int main(int argc, char* argv[])
 	//cam_pose.matrix.val[1] = 0.0f;
 	//cam_pose.matrix.val[2] = 0.0f;
 	//cam_pose.matrix.val[3] = 0.0f;
-	//double near =0.1, far = 100;
+	//double near =1, far = 1000.0;
 	//cam_pose.matrix.val[4] = 0.0f;
 	//cam_pose.matrix.val[5] = fy / cy;
 	//cam_pose.matrix.val[6] = 0.0f;
@@ -255,20 +329,55 @@ int main(int argc, char* argv[])
 	//
 	//Matx44d temp_matrix = cam_pose.matrix;
 	////cv::viz::Camera camera(temp_matrix, cv::Size(input_image.cols, input_image.rows));
-	//cv::viz::Camera camera(fx, fy, cx, cy, cv::Size(input_image.cols, input_image.rows));
-	myWindow.setViewerPose(cam_pose);
+	cv::viz::Camera camera(fx, fy, cx, cy, cv::Size(input_image.cols, input_image.rows));
+	cv::Matx44d pose_out31231;
 	
+	camera.computeProjectionMatrix(pose_out31231);
+	myWindow.setViewerPose(cam_pose);
+
+
+
+	myWindow.spinOnce(1, false);
+	cv::viz::Camera camera222(fx, fy, cx, cy, input_image.size());
+	cv::viz::Camera camera333(pose_out31231, input_image.size());
+	
+	//camera = myWindow.getCamera();
+	camera222.setClip(cv::Vec2d(0, fx+10));
+	myWindow.setCamera(camera);
+	Affine3f cloud_pose = Affine3f().translate(Vec3f(-320, -240, 640.0f));
+
 	float _count_ = 0;
+
+	Affine3f transform = viz::makeTransformToGlobal(Vec3f(0.0f, -1.0f, 0.0f), Vec3f(-1.0f, 0.0f, 0.0f), Vec3f(0.0f, 0.0f, -1.0f), cam_pos);
+
+	Affine3f cloud_pose_global = transform * cloud_pose;
+
+
+	
 	while (!myWindow.wasStopped())
 	{
+		
+		//myWindow.setViewerPose(pose_out31231);
+		//cv::viz::Camera camera;
+		//myWindow.resetCamera();
 		//myWindow.setViewerPose(cam_pose);
-		//camera = myWindow.getCamera();
-	//	myWindow.setCamera(camera);
+	
+	//	camera = myWindow.getCamera();
+	////	myWindow.setViewerPose(cam_pose);
+	//	camera.setClip(cv::Vec2d(890,890));
+	//	//myWindow.setCamera(camera);
+	//	Affine3d pose_out = myWindow.getViewerPose();
+
+	//	cv::Matx44d pose_out_2 = pose_out.matrix;
+	//	//cv::Mat44d pose_out_44 = pose_out;
+	//	cv::viz::Camera camera2(pose_out_2, cv::Size(input_image.cols, input_image.rows));
+		//myWindow.setCamera(camera2);
 		float time_start = std::clock();
 		
 		cap >> input_image;
 		std::vector<cv::Point2f> out_vector_unordered = ar_class.find_aruco_center_four_corners(input_image);
 		std::vector<cv::Point2f> out_vector;
+		//myWindow.setWidgetPose("plane", cloud_pose_global);
 		if (out_vector_unordered.size() == 4){
 
 			out_vector.push_back(out_vector_unordered.at(1));
@@ -290,9 +399,10 @@ int main(int argc, char* argv[])
 		
 		cv::Mat screenshot= myWindow.getScreenshot();
 
-		Vec3f cam_pos(0, 0,0), cam_focal_point(0, 0, 100), cam_y_dir(1.0, 0.0, 0.0f);
+
+		/*Vec3f cam_pos(0, 0,0), cam_focal_point(0, 0, 100), cam_y_dir(1.0, 0.0, 0.0f);
 		_count_++;
-		Affine3f cam_pose = viz::makeCameraPose(cam_pos, cam_focal_point, cam_y_dir);
+		Affine3f cam_pose = viz::makeCameraPose(cam_pos, cam_focal_point, cam_y_dir);*/
 		//myWindow.setViewerPose(cam_pose);
 		cv::Mat dst;
 
@@ -339,8 +449,8 @@ int main(int argc, char* argv[])
 			
 			Affine3f pose(rot_mat, cv::Vec3f(tout_temp.at(0),tout_temp.at(1), tout_temp.at(2)));
 
-			//pose = cam_pose*pose;
-
+			pose = transform*pose;
+			//Affine3f cloud_pose_global = transform * cloud_pose;
 			myWindow.setWidgetPose("plane", pose);
 			//myWindow.setViewerPose(cam_pose);
 			//myWindow.showWidget("plane", cv::viz::WMesh(plane));
@@ -369,6 +479,7 @@ int main(int argc, char* argv[])
 		myWindow.setWidgetPose("Cube Widget", pose);*/
 	
 		myWindow.spinOnce(1, false);
+		//myWindow.setCamera(camera222);
 
 		std::cout << "FPS cv : " << 1.0/((time_start - std::clock()) / CLOCKS_PER_SEC) << std::endl;
 	}

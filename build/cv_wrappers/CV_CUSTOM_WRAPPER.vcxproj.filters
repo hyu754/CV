@@ -10,6 +10,9 @@
     <ClCompile Include="D:\GitHub\CV\cv_wrappers\source\surf.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\GitHub\CV\cv_wrappers\source\viz_tools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D:\GitHub\CV\cv_wrappers\include\aruco_tools.h">
@@ -19,6 +22,9 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="D:\GitHub\CV\cv_wrappers\include\surf.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GitHub\CV\cv_wrappers\include\viz_tools.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>

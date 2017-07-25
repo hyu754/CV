@@ -208,7 +208,7 @@ std::vector<cv::Point2f> stereo_ar::find_aruco_center_four_corners(cv::Mat input
 	//cv::flip(gray, gray, 1);
 
 	std::vector<cv::Point2f> empty;
-	cv::imshow("cc", gray);
+	//cv::imshow("cc", gray);
 	cv::aruco::detectMarkers(gray, dictionary, markerCorners, markerIds, parameters, rejectedCandidates);
 
 
