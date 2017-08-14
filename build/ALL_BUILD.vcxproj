@@ -168,11 +168,17 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ProjectReference Include="D:/GitHub/CV/build/cv_wrappers/CV_CUSTOM_WRAPPER.vcxproj">
       <Project>D49D1EE7-5126-336C-84A0-25FD2FC0F10A</Project>
     </ProjectReference>
+    <ProjectReference Include="D:/GitHub/CV/build/HOUGH_CIRCLE_TEST.vcxproj">
+      <Project>24399B93-2FA9-323F-9322-D26169449770</Project>
+    </ProjectReference>
     <ProjectReference Include="D:/GitHub/CV/build/LK_TEST.vcxproj">
       <Project>28200471-7107-39AE-A1DB-0E64374C762E</Project>
     </ProjectReference>
-    <ProjectReference Include="D:/GitHub/CV/build/LibCV.vcxproj">
-      <Project>67F06D6D-27FF-3ED6-90D3-02094300B582</Project>
+    <ProjectReference Include="D:/GitHub/CV/build/OpenCV_Wrappers.vcxproj">
+      <Project>8549629B-06B9-319A-962F-BE105FBE0F4A</Project>
+    </ProjectReference>
+    <ProjectReference Include="D:/GitHub/CV/build/STEREO_TEST.vcxproj">
+      <Project>1C5DD071-1326-326E-A6AC-6EC4BA289D02</Project>
     </ProjectReference>
     <ProjectReference Include="D:/GitHub/CV/build/VIZ_TEST.vcxproj">
       <Project>3EE7D4EF-1239-3C4F-91FF-9865C201F149</Project>

@@ -261,7 +261,7 @@ cv::Mat viz_tools::augment_mesh(cv::Mat input_image,std::string object_name, cv:
 	return dst;
 }
 
-
+#ifdef USE_AFEM
 
 void viz_tools::render_geometry_FEM(std::vector<AFEM::element> element_vector,std::vector<AFEM::position_3D> position_vector){
 	cv::viz::Mesh geometry;
@@ -694,7 +694,7 @@ void viz_tools::render_stationary_FEM(std::string geometry_name,::vector<AFEM::s
 	
 }
 
-
+#endif
 void viz_tools::generate_rays(std::vector<cv::Point3f> features_in_original_reference){
 
 	int height = size_window.height;

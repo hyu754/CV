@@ -1,6 +1,1 @@
-﻿  test_VIZ.cpp
-D:\GitHub\CV\test_VIZ.cpp(139): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-D:\GitHub\CV\test_VIZ.cpp(140): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-D:\GitHub\CV\test_VIZ.cpp(141): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-D:\GitHub\CV\test_VIZ.cpp(144): warning C4102: 'cv' : unreferenced label
-  VIZ_TEST.vcxproj -> D:\GitHub\CV\build\Debug\VIZ_TEST.exe
+﻿  VIZ_TEST.vcxproj -> D:\GitHub\CV\build\Debug\VIZ_TEST.exe

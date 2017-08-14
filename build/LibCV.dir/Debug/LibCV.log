@@ -1,1 +1,6 @@
-﻿
+﻿  Building Custom Rule D:/GitHub/CV/CMakeLists.txt
+  CMake does not need to re-run because D:\GitHub\CV\build\CMakeFiles\generate.stamp is up-to-date.
+  opencv_example.cpp
+D:\GitHub\CV\tests\opencv_example.cpp(6): warning C4005: 'HAVE_OPENCV_XFEATURES2D' : macro redefinition
+          D:\GitHub\opencv\build\opencv2/opencv_modules.hpp(64) : see previous definition of 'HAVE_OPENCV_XFEATURES2D'
+  LibCV.vcxproj -> D:\GitHub\CV\build\Debug\LibCV.exe

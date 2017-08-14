@@ -6,7 +6,7 @@
 #include "opencv2/opencv_modules.hpp"
 
 
-
+#include "glm\glm.hpp"
 #include "opencv2/core.hpp"
 #include "opencv2/features2d.hpp"
 #include "opencv2/highgui.hpp"
@@ -22,7 +22,9 @@
 #include <opencv2/viz/vizcore.hpp>
 #include <opencv2/viz/widgets.hpp>
 #include <opencv2/viz/widget_accessor.hpp>
+#ifdef AFEM_USE
 #include <AFEM_geometry.hpp>
+#endif
 #include "raytracer.h"
 
 class viz_tools
@@ -172,6 +174,7 @@ public:
 	//Pose, is the new pose of the virtual object from solve_pnp_matrix
 	cv::Mat augment_mesh(cv::Mat input_image,std::string object_name,cv::Affine3f pose);
 
+#ifdef AFEM_USE
 	//Get geometry from AFEM::geometry
 	void render_geometry_FEM(std::vector<AFEM::element> geometry, std::vector<AFEM::position_3D> position_vector);
 
@@ -182,7 +185,7 @@ public:
 
 	//Renders the stationary points on screen
 	void render_stationary_FEM(std::string geometry_name,std::vector<AFEM::stationary> stationary_vec);
-
+#endif
 	//Generates the rays used for ray tracing
 	//Features in origiinal reference contains features transformed into the original reference frame,
 	//The points should be planner to the face being tracked.
@@ -202,6 +205,8 @@ public:
 	template<typename T, typename S>
 	std::vector<S> glm_to_cv_3d(std::vector<T>);
 
+
+#ifdef AFEM_USE
 	//Update the position of the verticies of the mesh
 	//Input:	std::string name - name of object to be changed
 	//			AFEM::position_3D - the new position of the mesh
@@ -212,7 +217,7 @@ public:
 	//Input:	std::string name - name of object to be changed
 	//			AFEM::position_3D - the new position of the mesh
 	void update_mesh_surface_position(std::string object_name, std::vector<AFEM::position_3D> new_position);
-
+#endif
 	
 
 
