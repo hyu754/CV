@@ -17,9 +17,9 @@ void optic_flow::initialize_points(std::vector<cv::Point2f> in_vector){
 }
 
 void optic_flow::add_points(cv::Point2f in_point){
-	vector<Point2f> tmp;
+	vector<cv::Point2f> tmp;
 	tmp.push_back(in_point);
-	cornerSubPix(gray, tmp, winSize, Size(-1, -1), termcrit);
+	cornerSubPix(gray, tmp, winSize, cv::Size(-1, -1), termcrit);
 	points[1].push_back(tmp[0]);
 	std::swap(points[1], points[0]);
 
@@ -37,7 +37,7 @@ void optic_flow::run_LK(std::string name){
 
 	frame.copyTo(image);
 		
-	cvtColor(image, gray, COLOR_BGR2GRAY);
+	cvtColor(image, gray, cv::COLOR_BGR2GRAY);
 	
 	//gray = image;
 	if (!points[0].empty()){
@@ -80,9 +80,9 @@ void optic_flow::run_LK(std::string name){
 	}
 	if (addRemovePt && points[1].size() < (size_t)MAX_COUNT)
 	{
-		vector<Point2f> tmp;
+		vector<cv::Point2f> tmp;
 		tmp.push_back(point);
-		cornerSubPix(gray, tmp, winSize, Size(-1, -1), termcrit);
+		cornerSubPix(gray, tmp, winSize, cv::Size(-1, -1), termcrit);
 		points[1].push_back(tmp[0]);
 		addRemovePt = false;
 	}
@@ -91,7 +91,7 @@ void optic_flow::run_LK(std::string name){
 	int _count_status_ = 0;
 	for (auto status_ptr = status.begin(); status_ptr != status.end(); ++status_ptr){
 		if ((*status_ptr)){
-			circle(image, points[1].at(_count_status_), 1, Scalar(0, 250, 1), 3, 8);
+			circle(image, points[1].at(_count_status_), 1, cv::Scalar(0, 250, 1), 3, 8);
 			cv::line(image, original_position.at(_count_status_), points[1].at(_count_status_), cv::Scalar(0, 100, 200));
 			
 		} 
@@ -123,6 +123,20 @@ void optic_flow::run_LK(std::string name){
 	cv::swap(prevGray, gray);
 
 
+}
+
+void optic_flow::draw_result(cv::Mat *input_image){
+	int _count_status_ = 0;
+	for (auto status_ptr = status.begin(); status_ptr != status.end(); ++status_ptr){
+		if ((*status_ptr)){
+			circle(*input_image, points[1].at(_count_status_), 1, cv::Scalar(0, 250, 1), 3, 8);
+			cv::line(*input_image, original_position.at(_count_status_), points[1].at(_count_status_), cv::Scalar(0, 100, 200));
+
+		}
+
+		_count_status_++;
+
+	}
 }
 
 optic_flow::optic_flow(){

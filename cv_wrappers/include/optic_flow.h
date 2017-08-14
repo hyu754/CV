@@ -6,17 +6,18 @@
 
 #include <iostream>
 #include <ctype.h>
-using namespace cv;
+
 using namespace std;
 class optic_flow
 {
 private:
 	//variables for optic flow
 	cv::Mat gray, prevGray, image, frame, frame2;
-	std::vector<cv::Point2f> points[2];
+
+	std::vector<cv::Point2f> points[2]; //!< Brief Left and right point vectors
 	std::vector<cv::Point2f> original_position;//vector to store the original position of the poitns
 	vector<uchar> status;
-	Point2f point;
+	cv::Point2f point;
 
 	//Boolean variable to determine if initial points are established
 	bool initialized = false;
@@ -24,15 +25,21 @@ public:
 	
 	//initialize key feature points to track.
 	//Input: vector of points to track
-	void initialize_points(std::vector<cv::Point2f>);
+
+	/**
+	* Initialize optic flow points
+	* @see run_LK()
+	* @param initialize_input the first argument.
+	*/
+	void initialize_points(std::vector<cv::Point2f> initialize_input); 
 
 	//Run the LK optic flow algorithm, the input is the display window name
 	void run_LK(std::string);
 
 	//Some criterias
-	TermCriteria termcrit;
-	Size subPixWinSize;
-	Size winSize;
+	cv::TermCriteria termcrit;
+	cv::Size subPixWinSize;
+	cv::Size winSize;
 	bool addRemovePt = false;
 
 	//Get frame
@@ -63,6 +70,9 @@ public:
 
 	//get initialized bool
 	bool get_initialized_bool(void){ return initialized; }
+
+	//This function will draw the result onto the image given as the input to this function
+	void draw_result(cv::Mat *input_image);
 
 	optic_flow();
 	~optic_flow();

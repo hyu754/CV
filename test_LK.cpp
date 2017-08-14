@@ -56,7 +56,8 @@ int main(int argc, char* argv[])
 }
 #endif // 0
 	//Mat img_1 = Mat(1000, 1000, CV_8UC1);
-	VideoCapture cap(0);
+	std::string file_name = "C:\\Users\\hyu754\\Downloads\\capture-20110222T141957Z.avi";
+	VideoCapture cap(file_name);
 	if (!cap.isOpened()){
 		return -1;
 	}

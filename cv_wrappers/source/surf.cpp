@@ -7,7 +7,7 @@ surf_track::surf_track(){
 	img2_gpu.create(1, 1, CV_8U);
 
 	//_hessianThreshold
-	surf = new SURF_CUDA;
+	surf = new cv::cuda::SURF_CUDA;
 	surf->hessianThreshold = 700;
 }
 
@@ -34,8 +34,8 @@ void surf_track::get_image_2(cv::Mat input_mat){
 
 void surf_track::run_surf(bool display_matches){
 
-	(*surf)(img1_gpu, GpuMat(), keypoints1GPU, descriptors1GPU);
-	(*surf)(img2_gpu, GpuMat(), keypoints2GPU, descriptors2GPU);
+	(*surf)(img1_gpu,cv::cuda:: GpuMat(), keypoints1GPU, descriptors1GPU);
+	(*surf)(img2_gpu, cv::cuda::GpuMat(), keypoints2GPU, descriptors2GPU);
 
 	if (keypoints2GPU.cols != 0){
 		matcher->match(descriptors1GPU, descriptors2GPU, matches);
@@ -52,7 +52,7 @@ void surf_track::run_surf(bool display_matches){
 
 		//OF.run_LK("LK FLOW");
 		// drawing the results
-		Mat img_matches;
+		cv::Mat img_matches;
 		double max_dist = 0; double min_dist = 1000;
 		for (int k = 0; k < matches.size(); k++)
 		{
@@ -61,7 +61,7 @@ void surf_track::run_surf(bool display_matches){
 			if (dist > max_dist) max_dist = dist;
 		}
 
-		std::vector< DMatch > good_matches;
+		std::vector< 	cv::DMatch > good_matches;
 
 		for (int l = 0; l < matches.size(); l++)
 		{
@@ -70,14 +70,14 @@ void surf_track::run_surf(bool display_matches){
 				good_matches.push_back(matches[l]);
 			}
 		}
-		drawMatches(Mat(img1_gpu), keypoints1, Mat(img2_gpu), keypoints2, good_matches, img_matches, cv::Scalar(0, 20, 100));
+		drawMatches(cv::Mat(img1_gpu), keypoints1, cv::Mat(img2_gpu), keypoints2, good_matches, img_matches, cv::Scalar(0, 20, 100));
 
 		//namedWindow("matches", 0);
 		if (display_matches == true)
 			imshow("matches", img_matches);
 
 	}
-	waitKey(1);
+	cv::waitKey(1);
 }
 
 std::vector<cv::Point2f> surf_track::return_keypoints(int image_number){

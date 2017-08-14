@@ -13,6 +13,9 @@
     <ClCompile Include="D:\GitHub\CV\cv_wrappers\source\viz_tools.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\GitHub\CV\cv_wrappers\source\viz_widget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D:\GitHub\CV\cv_wrappers\include\aruco_tools.h">

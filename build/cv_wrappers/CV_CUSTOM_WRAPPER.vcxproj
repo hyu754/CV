@@ -269,6 +269,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\GitHub\CV\cv_wrappers\source\optic_flow.cpp"  />
     <ClCompile Include="D:\GitHub\CV\cv_wrappers\source\surf.cpp"  />
     <ClCompile Include="D:\GitHub\CV\cv_wrappers\source\viz_tools.cpp"  />
+    <ClCompile Include="D:\GitHub\CV\cv_wrappers\source\viz_widget.cpp"  />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="D:/GitHub/CV/build/ZERO_CHECK.vcxproj">

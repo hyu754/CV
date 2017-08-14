@@ -14,26 +14,26 @@
 #include <opencv2/cudaimgproc.hpp>
 #include <iostream>
 #include <ctype.h>
-using namespace cv;
+
 using namespace std;
-using namespace cv::cuda;
+
 class surf_track
 {
 private:
 	//variables for optic flow
-	GpuMat img1_gpu;
-	GpuMat img2_gpu;
+	cv::cuda::GpuMat img1_gpu;
+	cv::cuda::GpuMat img2_gpu;
 
 	//key points and descriptors
-	GpuMat keypoints1GPU, keypoints2GPU;
-	GpuMat descriptors1GPU, descriptors2GPU;
+	cv::cuda::GpuMat keypoints1GPU, keypoints2GPU;
+	cv::cuda::GpuMat descriptors1GPU, descriptors2GPU;
 
 	// matching descriptors
-	Ptr<cv::cuda::DescriptorMatcher> matcher = cv::cuda::DescriptorMatcher::createBFMatcher();
-	vector<DMatch> matches;
+	cv::Ptr<cv::cuda::DescriptorMatcher> matcher = cv::cuda::DescriptorMatcher::createBFMatcher();
+	vector<cv::DMatch> matches;
 
 	// downloading results
-	vector<KeyPoint> keypoints1, keypoints2;
+	vector<cv::KeyPoint> keypoints1, keypoints2;
 	vector<float> descriptors1, descriptors2;
 
 
@@ -52,7 +52,7 @@ public:
 
 
 	//Surf pointer
-	SURF_CUDA *surf;
+	cv::cuda::SURF_CUDA *surf;
 
 	surf_track();
 	~surf_track();
