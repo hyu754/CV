@@ -132,3 +132,12 @@ std::vector<cv::Point3f> stereo::triangulation(){
 	return solution_container;
 
 }
+
+void stereo::set_roi(cv::Mat input_image,DIRECTIONS dir){
+	if (dir == DIRECTIONS::LEFT){
+		roi_left = cv::selectROI(input_image, true);
+	}
+	else if (dir == DIRECTIONS::RIGHT){
+		roi_right = cv::selectROI(input_image, true);
+	}
+}

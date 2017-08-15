@@ -30,6 +30,9 @@
     <ClInclude Include="D:\GitHub\CV\cv_wrappers\include\aruco_tools.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="D:\GitHub\CV\cv_wrappers\include\cv_custom_wrapper_types.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
     <ClInclude Include="D:\GitHub\CV\cv_wrappers\include\hough_circle.h">
       <Filter>Headers</Filter>
     </ClInclude>

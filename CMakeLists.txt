@@ -40,7 +40,7 @@ target_link_libraries(OpenCV_Wrappers ${OpenCV_LIBS} CV_CUSTOM_WRAPPER  ovrvisio
 target_link_libraries(LK_TEST ${OpenCV_LIBS} CV_CUSTOM_WRAPPER  ovrvision64d )
 target_link_libraries(VIZ_TEST ${OpenCV_LIBS}  CV_CUSTOM_WRAPPER)
 target_link_libraries(HOUGH_CIRCLE_TEST ${OpenCV_LIBS}  CV_CUSTOM_WRAPPER)
-target_link_libraries(STEREO_TEST ${OpenCV_LIBS}  CV_CUSTOM_WRAPPER)
+target_link_libraries(STEREO_TEST ${OpenCV_LIBS}  CV_CUSTOM_WRAPPER ovrvision64d )
 file(GLOB dlls_vtk ${VTK_DIR}/bin/debug/*.dll)
 file(GLOB dlls_cv ${OpenCV_DIR}/bin/debug/*.dll)
 file(GLOB dlls_extra ${CMAKE_SOURCE_DIR}/bin/*.dll)

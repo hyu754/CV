@@ -262,6 +262,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D:\GitHub\CV\cv_wrappers\include\aruco_tools.h" />
+    <ClInclude Include="D:\GitHub\CV\cv_wrappers\include\cv_custom_wrapper_types.h" />
     <ClInclude Include="D:\GitHub\CV\cv_wrappers\include\hough_circle.h" />
     <ClInclude Include="D:\GitHub\CV\cv_wrappers\include\optic_flow.h" />
     <ClInclude Include="D:\GitHub\CV\cv_wrappers\include\raytracer.h" />

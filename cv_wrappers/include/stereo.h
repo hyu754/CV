@@ -13,7 +13,7 @@ using namespace std;
 class stereo
 {
 public:
-	enum DIRECTIONS{LEFT,RIGHT};
+	enum DIRECTIONS{ LEFT, RIGHT };
 private:
 	//Make some custom variables
 	typedef std::vector<cv::Point2f> imagePointVector;
@@ -27,7 +27,7 @@ private:
 	//Stereo parameters
 	cv::Mat R, T, E, F;
 	cv::Mat R1, R2, P1, P2, Q;
-	
+
 	//Left and right images
 	cv::Mat left_image;
 	cv::Mat right_image;
@@ -35,6 +35,10 @@ private:
 	//Left and right points
 	imagePointVector left_image_points;
 	imagePointVector right_image_points;
+
+	//ROI for left and right images;
+	cv::Rect roi_left;
+	cv::Rect roi_right;
 public:
 	//Get left and right intrinsic and distortion information
 	//input - left_file, right_file - file names for the left and right xml files
@@ -43,7 +47,7 @@ public:
 
 	//Get stereo parameters
 	int initialize_stereo_parameters(std::string stereo_file);
-	
+
 	//Get left or right images
 	//Input:	im_in - image input
 	//			dir	  - left or right
@@ -54,14 +58,25 @@ public:
 	//			dir	  - left or right
 	void set_points(imagePointVector img_pts, DIRECTIONS dir);
 
+	//Set ROI, region of interest, for both left and right, allows user to select ROI for both images
+	//depending on direction specified
+	//Input:	img - image to specify ROI
+	//			dir - left or right
+	void set_roi(cv::Mat img, DIRECTIONS dir);
 
+	//Return ROI 
+	//Input:	dir - left or right roi
+	//Output:	roi either for left or right
+	cv::Rect return_roi(DIRECTIONS dir){ if (dir == DIRECTIONS::LEFT){ return roi_left; } else { return roi_right; } }
 
 	//This function performs triangulation on the left and right points
 	//Input:	left_points, right_points - left and right points in R2
 	//Output:	world_points - points in R3
 	std::vector<cv::Point3f> triangulation();
-	
-	
+
+	//Function to determin if ROI is set
+	bool roi_is_set(){ if (roi_left.height  && roi_right.height){ return true; } else{ return false; } }
+
 	//Default initializer
 	stereo();
 
