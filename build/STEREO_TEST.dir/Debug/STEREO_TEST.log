@@ -1,4 +1,0 @@
-﻿  test_stereo.cpp
-D:\GitHub\CV\cv_wrappers\include\hough_circle.h(44): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-D:\GitHub\CV\cv_wrappers\include\hough_circle.h(46): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-  STEREO_TEST.vcxproj -> D:\GitHub\CV\build\Debug\STEREO_TEST.exe

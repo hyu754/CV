@@ -19,6 +19,7 @@
 
 #include "stereo.h"
 #include "optic_flow.h"
+#include "viz_tools.h"
 #include <ovrvision_pro.h>
 using namespace std;
 using namespace cv;
@@ -43,6 +44,8 @@ int main(int argc, char* argv[])
 	//Stereo class
 	stereo stereo_class;
 
+	//viz class
+	viz_tools viz_class;
 
 	//hough circle ball tracking class
 	hough_circle_ball_tracker tracker_class[2];
@@ -198,7 +201,7 @@ int main(int argc, char* argv[])
 				//}
 				//populate mapper
 
-				int left_pair=0, right_pair=0;
+				/*int left_pair=0, right_pair=0;
 				std::cout << "Please enter pairs, to stop pairs enter -1 " << std::endl;
 				while (left_pair != -1){
 					
@@ -209,10 +212,37 @@ int main(int argc, char* argv[])
 					std::cout << "Please enter right index: ";
 					std::cin >> right_pair;
 					left_right_mapper[left_pair] = right_pair;
+					counter++;
 					
+				}*/
+
+				//If we select the correct region, then the ith circle will correspond to the ith circle
+				//on the other image.
+				for (int i = 0; i < tracer_status_left.size(); i++){
+					left_right_mapper[i] = i; 
 				}
+				
+				
 
 
+
+			}
+			/*
+			if the mapper is set then we use triangulation 
+			*/
+			if (left_right_mapper.size() != 0){
+				std::vector<cv::Point2f> keyPoints_vector_left, keyPoints_vector_right;
+
+				for (auto mapper_iter = left_right_mapper.begin(); mapper_iter != left_right_mapper.end(); ++mapper_iter){
+					keyPoints_vector_left.push_back(tracker_class[0].return_image_points().at(mapper_iter->first));
+					keyPoints_vector_right.push_back(tracker_class[1].return_image_points().at(mapper_iter->second));
+				}
+				stereo_class.set_points(keyPoints_vector_left, stereo::DIRECTIONS::LEFT);
+				stereo_class.set_points(keyPoints_vector_right, stereo::DIRECTIONS::RIGHT);
+
+				std::vector<cv::Point3f> output = stereo_class.triangulation();
+				viz_class.render_point_cloud(output,"tumour_pos",20.0f);
+				viz_class.render();
 			}
 		}
 	}

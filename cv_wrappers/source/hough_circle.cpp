@@ -5,7 +5,7 @@ hough_circle::hough_circle(){
 
 	// Filter by Area.
 	params.filterByArea = true;
-	params.minArea = 75;
+	params.minArea = 205;
 
 	// Filter by Circularity
 	params.filterByCircularity = true;
@@ -13,7 +13,7 @@ hough_circle::hough_circle(){
 
 	// Filter by Convexity
 	params.filterByConvexity = true;
-	params.minConvexity = 0.51;
+	params.minConvexity = 0.21;
 
 	// Filter by Inertia
 	//params.filterByInertia = true;

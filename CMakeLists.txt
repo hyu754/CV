@@ -51,7 +51,7 @@ add_custom_target(add_dlls
 	COMMAND ${CMAKE_COMMAND} -E copy ${dlls_vtk}          ${CMAKE_BINARY_DIR}/Debug/
 	COMMAND ${CMAKE_COMMAND} -E copy ${dlls_extra}         ${CMAKE_BINARY_DIR}/Debug/
 	COMMAND ${CMAKE_COMMAND} -E copy ${camera_info}         ${CMAKE_BINARY_DIR}/Debug/
-
+	COMMAND ${CMAKE_COMMAND} -E copy ${camera_info}         ${CMAKE_BINARY_DIR}/
 )
 
 add_dependencies(OpenCV_Wrappers add_dlls)

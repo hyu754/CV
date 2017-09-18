@@ -1,9 +1,0 @@
-D:/GitHub/CV/build/CMakeFiles/OpenCV_Wrappers.dir
-D:/GitHub/CV/build/CMakeFiles/LK_TEST.dir
-D:/GitHub/CV/build/CMakeFiles/VIZ_TEST.dir
-D:/GitHub/CV/build/CMakeFiles/HOUGH_CIRCLE_TEST.dir
-D:/GitHub/CV/build/CMakeFiles/STEREO_TEST.dir
-D:/GitHub/CV/build/CMakeFiles/add_dlls.dir
-D:/GitHub/CV/build/CMakeFiles/ALL_BUILD.dir
-D:/GitHub/CV/build/CMakeFiles/ZERO_CHECK.dir
-D:/GitHub/CV/build/cv_wrappers/CMakeFiles/CV_CUSTOM_WRAPPER.dir

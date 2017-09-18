@@ -152,7 +152,7 @@ optic_flow::optic_flow(){
 
 	termcrit.maxCount = 10;
 	termcrit.epsilon = 0.01;
-
+	 
 	subPixWinSize.height = 10;
 	subPixWinSize.width = 10;
 	winSize.height = 10;
